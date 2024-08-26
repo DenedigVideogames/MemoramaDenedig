@@ -525,9 +525,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7077eb4ab1267c0428128611d96ff53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textMeshProText: {fileID: 159638809}
+  textMeshProTexts: []
   newSize: 20
-  newFont: {fileID: 11400000, guid: e8a55c9ca5da16640bf50fda27f13566, type: 2}
 --- !u!4 &1234788925
 Transform:
   m_ObjectHideFlags: 0
