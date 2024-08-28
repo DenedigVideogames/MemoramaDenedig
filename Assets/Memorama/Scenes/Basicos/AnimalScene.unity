@@ -334,18 +334,19 @@ MonoBehaviour:
   timerPlus: 0
   spawner: {fileID: 18047340}
   gameOverCanvas: {fileID: 0}
-  pila1: {fileID: 284482494}
-  pila2: {fileID: 262424078}
-  pila3: {fileID: 452015962}
-  pila4: {fileID: 1461322907}
-  pila5: {fileID: 546827032}
-  pila6: {fileID: 987095721}
-  pila7: {fileID: 303822768}
-  pila8: {fileID: 1618141455}
-  pila9: {fileID: 1949159092}
-  pila10: {fileID: 1378830630}
-  pila11: {fileID: 1695740207}
-  pila12: {fileID: 1536817747}
+  pilas:
+  - {fileID: 284482494}
+  - {fileID: 262424078}
+  - {fileID: 452015962}
+  - {fileID: 1461322907}
+  - {fileID: 546827032}
+  - {fileID: 987095721}
+  - {fileID: 303822768}
+  - {fileID: 1618141455}
+  - {fileID: 1949159092}
+  - {fileID: 1378830630}
+  - {fileID: 1695740207}
+  - {fileID: 1536817747}
 --- !u!4 &18047342
 Transform:
   m_ObjectHideFlags: 0

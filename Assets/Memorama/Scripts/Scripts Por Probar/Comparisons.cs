@@ -2,12 +2,8 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-
 public class Comparisons : MonoBehaviour
 {
-    //si algun dia llega a venir otro dev a este codigo, quiero pedir perdon por este codigo tan culero, cuando llegue, ya estaba asi, yo solo implemente lo de timer plus, 
-    // la racha, el timer normal y el memorama plus, el equipo que se encargo de hacer la mecanica principal del juego hizo todo lo demas... suerte entendiendo este codigo y los demas (esta muy cabron)
-
     public TextMeshProUGUI CheckText;
     public TextMeshProUGUI WrongText;
 
@@ -54,21 +50,7 @@ public class Comparisons : MonoBehaviour
     public Spawner spawner;
     public GameObject gameOverCanvas;
 
-    //Transforms
-    #region
-    public Transform pila1;
-    public Transform pila2;
-    public Transform pila3;
-    public Transform pila4;
-    public Transform pila5;
-    public Transform pila6;
-    public Transform pila7;
-    public Transform pila8;
-    public Transform pila9;
-    public Transform pila10;
-    public Transform pila11;
-    public Transform pila12;
-    #endregion
+    public Transform[] pilas;
 
     void Start()
     {
@@ -83,86 +65,90 @@ public class Comparisons : MonoBehaviour
 
     void Update()
     {
-        if (spawner.MemoramaPlus == true)
-        {
-            CheckText.text = aciertos.ToString() + " / 28";
-        }
+        CheckText.text = aciertos + " / " + (spawner.MemoramaPlus ? "28" : "X");
 
         if (CartasVolteadas == 2)
         {
             if (firstID == secondID)
             {
-                Cursor.lockState = CursorLockMode.Locked;
-                aciertos = aciertos + 1;
-                CheckText.text = aciertos.ToString() + " / 28";
-                CartasVolteadas = 0;
-                Checktimerend = true;
-                rachaCount++;
-                UpdateScore();
-
-                if(timerPlus == true)
-                {
-                    timerCount.AddTime(3);
-                    addTimeCanvas.gameObject.SetActive(true);
-                    Invoke("DesactivarTimeCanvas", 3.7f);
-                }
-
-                if (Checktimerend == true)
-                {
-                    Settings.Instance.PlaySfx("Completado");
-                    StartCoroutine(Makebig());   
-                }
+                HandleMatch();
             }
-
-            if (firstID != secondID)
+            else
             {
-                errores = errores + 1;
-                WrongText.text = errores.ToString();
-                CartasVolteadas = 0;
-                Errortimerend = true;
-                rachaCount = 0;
-                print("racha perdida");
-
-                if (spawner.MemoramaPlus == true && errores == 1) // Verifica si MemoramaPlus está activo y si es el primer error
-                {
-                    GameOver();
-                    print("Que bruto pongale 0");
-                }
-
-                if (Errortimerend == true)
-                {
-                    Settings.Instance.PlaySfx("Error");
-                    StartCoroutine(Corspaw());
-                }
+                HandleMismatch();
             }
         }
+    }
+
+    private void CheckTextAciertos()
+    {
+        CheckText.text = aciertos + " / " + (spawner.MemoramaPlus ? "28" : "X");
+    }
+
+    private void CheckPar()
+    {
+
+        if (CartasVolteadas == 2)
+        {
+            if (firstID == secondID)
+            {
+                HandleMatch();
+            }
+            else
+            {
+                HandleMismatch();
+            }
+        }
+        else
+        {
+            CartasVolteadas++;
+        }
+    }
+
+    private void HandleMatch()
+    {
+        aciertos++;
+        rachaCount++;
+        UpdateScore();
+
+        if (timerPlus)
+        {
+            timerCount.AddTime(3);
+            addTimeCanvas.gameObject.SetActive(true);
+            Invoke("DesactivarTimeCanvas", 3.7f);
+        }
+
+        Settings.Instance.PlaySfx("Completado");
+        StartCoroutine(Makebig());
+
+        CartasVolteadas = 0;
+    }
+
+    private void HandleMismatch()
+    {
+        errores++;
+        rachaCount = 0;
+        WrongText.text = errores.ToString();
+
+        if (spawner.MemoramaPlus && errores == 1)
+        {
+            GameOver();
+        }
+
+        Settings.Instance.PlaySfx("Error");
+        StartCoroutine(Corspaw());
+
+        CartasVolteadas = 0;
     }
 
     private void UpdateScore()
     {
         if (rachaCount >= 2)
         {
-            print("racha ganada");
-            TimeCount timeCount = FindObjectOfType<TimeCount>();
-            if (timeCount != null)
-            {
-                timeCount.AddPoints(rachaCount); 
-                rachaCanvas.gameObject.SetActive(true);
-                print("+50");
-                Invoke("DesactivarRachaCanvas", 3.7f);
-            }
-            Timer timerCount = FindObjectOfType<Timer>();
-            if (timerCount != null)
-            {
-                timerCount.AddPoints(rachaCount);
-                rachaCanvas.gameObject.SetActive(true);
-                print("+50");
-                Invoke("DesactivarRachaCanvas", 3.7f);
-            }
-            else
-            {
-                print("racha perdida");
-            }
+            timeCount?.AddPoints(rachaCount);
+            timerCount?.AddPoints(rachaCount);
+            rachaCanvas.gameObject.SetActive(true);
+            Invoke("DesactivarRachaCanvas", 3.7f);
         }
     }
 
@@ -204,21 +190,54 @@ public class Comparisons : MonoBehaviour
     private IEnumerator Corspaw()
     {
         yield return new WaitForSeconds(.1f);
-
         Invoke("WaitTime", .5f);
-
-        cartavol1.GetComponent<BoxCollider>().enabled = true;
-        cartavol2.GetComponent<BoxCollider>().enabled = true;
+        EnableColliders();
 
         Errortimerend = false;
         StopAllCoroutines();
         Settings.Instance.PlaySfx("VolteoCartaError");
     }
 
+    private void EnableColliders()
+    {
+        cartavol1.GetComponent<BoxCollider>().enabled = true;
+        cartavol2.GetComponent<BoxCollider>().enabled = true;
+    }
+
     private void WaitTime()
     {
         cartavol1.GetComponent<Animator>().SetTrigger("Close");
         cartavol2.GetComponent<Animator>().SetTrigger("Close");
+    }
+
+    private IEnumerator Makebig()
+    {
+        timepause = true;
+        DeactivateAllColliders();
+
+        MoveCardsToCenter();
+
+        ruleta.SetActive(true);
+        rule.enabled = true;
+
+        yield return new WaitForSeconds(makebigtime);
+
+        Invoke("ActivateAllColliders", .5f);
+        StartCoroutine(Truespaw());
+    }
+
+    private void MoveCardsToCenter()
+    {
+        SetCardTransform(cartavol1, tocenterleft);
+        SetCardTransform(cartavol2, tocenterright);
+    }
+
+    private void SetCardTransform(GameObject card, Transform target)
+    {
+        card.GetComponent<Animator>().enabled = false;
+        card.transform.position = target.position;
+        card.transform.localScale = centresize;
+        card.transform.rotation = target.rotation;
     }
 
     private IEnumerator Truespaw()
@@ -229,235 +248,72 @@ public class Comparisons : MonoBehaviour
 
         CorrectParPos();
 
-        if (spawner.MemoramaPlus == true)
+        if (spawner.MemoramaPlus)
         {
-            if (aciertos == 4) //10
-            {
-                setcanvas = true;
-                Cuentalugar = 0;
-            }
-        
-            if (aciertos == 10) //12 
-            {
-                setcanvas = true;
-                Cuentalugar = 0;
-            }
-        
-            if (aciertos == 18) //14
-            {
-                setcanvas = true;
-                Cuentalugar = 0;
-            }
-        
-            if (aciertos == 28) //16
-            {
-                setcanvas = true;
-                Cuentalugar = 0;
-            }
-
-            if (aciertos == 37) //18
-            {
-                canvascore.SetActive(true);
-                setcanvascore = true;
-            }
+            CheckMemoramaPlusConditions();
+        }
+        else
+        {
+            CheckNormalConditions();
         }
 
-        if (spawner.MemoramaPlus==false)
+        ResetAfterSpawn();
+    }
+
+    private void CheckMemoramaPlusConditions()
+    {
+        if (aciertos == 4 || aciertos == 10 || aciertos == 18 || aciertos == 28)
         {
-            if (aciertos == 4) //8 cartas
-            {
-                setcanvas = true;
-                Cuentalugar = 0;
-            }
-
-            if (aciertos == 10) //+12 cartas
-            {
-                setcanvas = true;
-                Cuentalugar = 0;
-            }
-
-            if (aciertos == 18) //+16 cartas
-            {
-                setcanvas = true;
-                Cuentalugar = 0;
-            }
-
-            if (aciertos == 28) //+20 cartas
-            {
-                canvascore.SetActive(true);
-                setcanvascore = true;
-            }
+            setcanvas = true;
+            Cuentalugar = 0;
         }
 
+        if (aciertos == 37)
+        {
+            canvascore.SetActive(true);
+            setcanvascore = true;
+        }
+    }
+
+    private void CheckNormalConditions()
+    {
+        if (aciertos == 4 || aciertos == 10 || aciertos == 18 || aciertos == 28)
+        {
+            setcanvas = true;
+            Cuentalugar = 0;
+        }
+
+        if (aciertos == 28)
+        {
+            canvascore.SetActive(true);
+            setcanvascore = true;
+        }
+    }
+
+    private void ResetAfterSpawn()
+    {
         Checktimerend = false;
         timepause = false;
-        Cuentalugar = Cuentalugar + 1;
+        Cuentalugar++;
         timeCount.sontiempo.Play();
         timerCount.sontiempo.Play();
         Cursor.lockState = CursorLockMode.None;
         StopAllCoroutines();
     }
 
-    private IEnumerator Makebig()
+    void CorrectParPos()
     {
-        timepause = true;
-        DeactivateAllColliders();
-
-        cartavol1.GetComponent<Animator>().enabled = false;
-        cartavol2.GetComponent<Animator>().enabled = false;
-
-        cartavol1.transform.position = tocenterleft.transform.position;
-        cartavol2.transform.position = tocenterright.transform.position;
-
-        cartavol1.transform.localScale = centresize;
-        cartavol2.transform.localScale = centresize;
-
-        cartavol1.transform.rotation = tocenterleft.transform.rotation;
-        cartavol2.transform.rotation = tocenterright.transform.rotation;
-
-        ruleta.SetActive(true);
-        rule.enabled = true;
-
-        yield return new WaitForSeconds(makebigtime);
-
-        Invoke("ActivateAllColliders", .5f);
-
-        StopCoroutine(Makebig());
-        StartCoroutine(Truespaw());
+        if (Cuentalugar <= pilas.Length)
+        {
+            SetCardTransform(cartavol1, pilas[Cuentalugar - 1]);
+            SetCardTransform(cartavol2, pilas[Cuentalugar - 1], new Vector3(.12f, 0, .1f));
+        }
     }
 
-    void CorrectParPos()//sonidos en los if cuando aciertos 
+    private void SetCardTransform(GameObject card, Transform target, Vector3 offset = default)
     {
-        if (Cuentalugar == 1)
-        {
-            cartavol1.transform.position = pila1.transform.position;
-            cartavol1.transform.localScale = size;
-            cartavol1.GetComponent<Collider>().enabled = false;
-
-            cartavol2.transform.position = pila1.transform.position + new Vector3(.12f,0,.1f);
-            cartavol2.transform.localScale = size;
-            cartavol2.GetComponent<Collider>().enabled = false;
-        }
-
-        if (Cuentalugar == 2)
-        {
-            cartavol1.transform.position = pila2.transform.position;
-            cartavol1.transform.localScale = size;
-            cartavol1.GetComponent<Collider>().enabled = false;
-
-            cartavol2.transform.position = pila2.transform.position + new Vector3(.12f, 0, .1f);
-            cartavol2.transform.localScale = size;
-            cartavol2.GetComponent<Collider>().enabled = false;
-        }
-
-        if (Cuentalugar == 3)
-        {
-            cartavol1.transform.position = pila3.transform.position;
-            cartavol1.transform.localScale = size;
-            cartavol1.GetComponent<Collider>().enabled = false;
-
-            cartavol2.transform.position = pila3.transform.position + new Vector3(.12f, 0, .1f);
-            cartavol2.transform.localScale = size;
-            cartavol2.GetComponent<Collider>().enabled = false;
-        }
-
-        if (Cuentalugar == 4)
-        {
-            cartavol1.transform.position = pila4.transform.position;
-            cartavol1.transform.localScale = size;
-            cartavol1.GetComponent<Collider>().enabled = false;
-
-            cartavol2.transform.position = pila4.transform.position + new Vector3(.12f, 0, .1f);
-            cartavol2.transform.localScale = size;
-            cartavol2.GetComponent<Collider>().enabled = false;
-        }
-
-        if (Cuentalugar == 5)
-        {
-            cartavol1.transform.position = pila5.transform.position;
-            cartavol1.transform.localScale = size;
-            cartavol1.GetComponent<Collider>().enabled = false;
-
-            cartavol2.transform.position = pila5.transform.position + new Vector3(.12f, 0, .1f);
-            cartavol2.transform.localScale = size;
-            cartavol2.GetComponent<Collider>().enabled = false;
-        }
-
-        if (Cuentalugar == 6)
-        {
-            cartavol1.transform.position = pila6.transform.position;
-            cartavol1.transform.localScale = size;
-            cartavol1.GetComponent<Collider>().enabled = false;
-
-            cartavol2.transform.position = pila6.transform.position + new Vector3(.12f, 0, .1f);
-            cartavol2.transform.localScale = size;
-            cartavol2.GetComponent<Collider>().enabled = false;
-        }
-
-        if (Cuentalugar == 7)
-        {
-            cartavol1.transform.position = pila7.transform.position;
-            cartavol1.transform.localScale = size;
-            cartavol1.GetComponent<Collider>().enabled = false;
-
-            cartavol2.transform.position = pila7.transform.position + new Vector3(.12f, 0, .1f);
-            cartavol2.transform.localScale = size;
-            cartavol2.GetComponent<Collider>().enabled = false;
-        }
-
-        if (Cuentalugar == 8)
-        {
-            cartavol1.transform.position = pila8.transform.position;
-            cartavol1.transform.localScale = size;
-            cartavol1.GetComponent<Collider>().enabled = false;
-
-            cartavol2.transform.position = pila8.transform.position + new Vector3(.12f, 0, .1f);
-            cartavol2.transform.localScale = size;
-            cartavol2.GetComponent<Collider>().enabled = false;
-        }
-
-        if (Cuentalugar == 9)
-        {
-            cartavol1.transform.position = pila9.transform.position;
-            cartavol1.transform.localScale = size;
-            cartavol1.GetComponent<Collider>().enabled = false;
-
-            cartavol2.transform.position = pila9.transform.position + new Vector3(.12f, 0, .1f);
-            cartavol2.transform.localScale = size;
-            cartavol2.GetComponent<Collider>().enabled = false;
-        }
-
-        if (Cuentalugar == 10)
-        {
-            cartavol1.transform.position = pila10.transform.position;
-            cartavol1.transform.localScale = size;
-            cartavol1.GetComponent<Collider>().enabled = false;
-
-            cartavol2.transform.position = pila10.transform.position + new Vector3(.12f, 0, .1f);
-            cartavol2.transform.localScale = size;
-            cartavol2.GetComponent<Collider>().enabled = false;
-        }
-
-        if (Cuentalugar == 11)
-        {
-            cartavol1.transform.position = pila11.transform.position;
-            cartavol1.transform.localScale = size;
-            cartavol1.GetComponent<Collider>().enabled = false;
-
-            cartavol2.transform.position = pila11.transform.position + new Vector3(.12f, 0, .1f);
-            cartavol2.transform.localScale = size;
-            cartavol2.GetComponent<Collider>().enabled = false;
-        }
-
-        if (Cuentalugar == 12)
-        {
-            cartavol1.transform.position = pila12.transform.position;
-            cartavol1.transform.localScale = size;
-            cartavol1.GetComponent<Collider>().enabled = false;
-
-            cartavol2.transform.position = pila12.transform.position + new Vector3(.12f, 0, .1f);
-            cartavol2.transform.localScale = size;
-            cartavol2.GetComponent<Collider>().enabled = false;
-        }
+        card.transform.position = target.position + offset;
+        card.transform.localScale = size;
+        card.GetComponent<Collider>().enabled = false;
     }
 }
