@@ -6,17 +6,27 @@ using TMPro;
 public class Text : MonoBehaviour
 {
     [SerializeField] int id;
-    public TextManager textManager;
-
-    private void Update()
+    public void UpdateID(int _id)
     {
-        StartCoroutine(TestCoroutine());
+        id = _id;
+        UpdateText();
+    }
+    private void Start()
+    {
+        TextManager.Instance.LanguageChanged += UpdateText;
+        UpdateText();
     }
 
-    private IEnumerator TestCoroutine()
+    private void OnDisable()
     {
-        yield return new WaitForSeconds(.1f);
-        transform.GetComponent<TextMeshProUGUI>().text = textManager.setText(id);
+        if (TextManager.Instance != null)
+        {
+            TextManager.Instance.LanguageChanged -= UpdateText;
+        }
     }
-    
+
+    public void UpdateText()
+    {
+        transform.GetComponent<TextMeshProUGUI>().text = TextManager.Instance.setText(id);
+    }
 }
