@@ -5,8 +5,7 @@ using TMPro;
 
 public class Spawner : MonoBehaviour
 {
-    public Sprite[] imagenesdeCartas;
-    public TextMeshPro[] textodeCartas;
+    public ContenedorCartas cartasContenedor;
     public int filas = 8;
     public int columnas = 3;
     public Vector2 espacio = Vector2.zero;
@@ -16,10 +15,9 @@ public class Spawner : MonoBehaviour
     public float nextwaveXpos;
     private int currentWave = 0;
     private int[] waveCardCounts = { 8, 12, 16, 20 };
-    private int[] waveCardCountsPlus = {8, 12, 16, 20 };
+    private int[] waveCardCountsPlus = { 8, 12, 16, 20 };
     private List<int> CardIDs;
     public Button waveButton;
-
     public bool MemoramaPlus;
 
     void Start()
@@ -27,18 +25,23 @@ public class Spawner : MonoBehaviour
         CardIDs = MixCards(waveCardCounts[currentWave]);
         SpawnCards(waveCardCounts[currentWave]);
 
-        if (MemoramaPlus == true)
+        if (MemoramaPlus)
         {
-            CardIDs = MixCards(waveCardCountsPlus[currentWave]);
-            SpawnCards(waveCardCountsPlus[currentWave]);
-            ActivateOpenAnimation();
-            Invoke("ActivateCloseAnimation", 5f);
+            StartMemoramaPlus();
         }
 
         waveButton.onClick.AddListener(OnWaveButtonClicked);
     }
 
-    public void ActivateOpenAnimation()
+    void StartMemoramaPlus()
+    {
+        CardIDs = MixCards(waveCardCountsPlus[currentWave]);
+        SpawnCards(waveCardCountsPlus[currentWave]);
+        ActivateOpenAnimation();
+        Invoke("ActivateCloseAnimation", 5f);
+    }
+
+    void ActivateOpenAnimation()
     {
         Cards[] cards = GetComponentsInChildren<Cards>();
         foreach (Cards card in cards)
@@ -57,7 +60,7 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    public void ActivateCloseAnimation()
+    void ActivateCloseAnimation()
     {
         Cards[] cards = GetComponentsInChildren<Cards>();
         foreach (Cards card in cards)
@@ -78,27 +81,20 @@ public class Spawner : MonoBehaviour
 
     public void OnWaveButtonClicked()
     {
-        if (MemoramaPlus && currentWave < waveCardCountsPlus.Length - 1)
+        if (currentWave < (MemoramaPlus ? waveCardCountsPlus.Length : waveCardCounts.Length) - 1)
         {
             currentWave++;
-            Xpos = Xpos + nextwaveXpos;
-            CardIDs = MixCards(waveCardCountsPlus[currentWave]);
-        }
+            Xpos += nextwaveXpos;
+            CardIDs = MixCards(MemoramaPlus ? waveCardCountsPlus[currentWave] : waveCardCounts[currentWave]);
 
-        else if (!MemoramaPlus && currentWave < waveCardCounts.Length - 1)
-        {
-            currentWave++;
-            Xpos = Xpos + nextwaveXpos;
-            CardIDs = MixCards(waveCardCounts[currentWave]);
-        }
+            if (MemoramaPlus)
+            {
+                ActivateOpenAnimation();
+                Invoke("ActivateCloseAnimation", 5f);
+            }
 
-        if (MemoramaPlus)
-        {
-            ActivateOpenAnimation();
-            Invoke("ActivateCloseAnimation", 5f);
+            SpawnCards(MemoramaPlus ? waveCardCountsPlus[currentWave] : waveCardCounts[currentWave]);
         }
-
-        SpawnCards(MemoramaPlus ? waveCardCountsPlus[currentWave] : waveCardCounts[currentWave]);
     }
 
     void SpawnCards(int totalCards)
@@ -117,17 +113,10 @@ public class Spawner : MonoBehaviour
                 if (_cartasSpawneadas < totalCards)
                 {
                     GameObject cartas = Instantiate(cartaPrefab, transform);
-
-                    if (MemoramaPlus)
-                    {
-                        ActivateOpenAnimation();
-                        Invoke("ActivateCloseAnimation", 5f);
-                    }
-
                     Cards cartaenturno = cartas.GetComponent<Cards>();
                     cartaenturno.id = CardIDs[_cartasSpawneadas];
-                    cartaenturno.AsignarImagendeCarta(imagenesdeCartas[cartaenturno.id]);
-                    cartaenturno.AsignarTextodeCarta(textodeCartas[cartaenturno.id]);
+                    cartaenturno.AsignarImagendeCarta(cartasContenedor.cartas[cartaenturno.id].imagen);
+                    cartaenturno.AsignarTextodeCarta(cartasContenedor.cartas[cartaenturno.id].nombre);
 
                     cartas.transform.position = new Vector2(x * espacio.x - Xpos, y * espacio.y - Ypos);
                     _cartasSpawneadas++;
@@ -148,5 +137,4 @@ public class Spawner : MonoBehaviour
         CardIDs.Shuffle();
         return CardIDs;
     }
-
 }

@@ -32,14 +32,7 @@ public class Settings : MonoBehaviour
     public string scene;
 
     [Header("TimerCanvas")]
-    public Canvas gamesFoodCanvas;
-    public Canvas gamesGodsCanvas;
-    public Canvas gamesDiversityCanvas;
-    public Canvas gamesAnimalsCanvas;
-    public Canvas gamesCandyCanvas;
-    public Canvas gamesHandCraftCanvas;
-
-    public Canvas originalCanvas;
+    public Canvas CanvasCategorias;
 
 
     void Awake()
@@ -163,75 +156,15 @@ public class Settings : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
-
-    public void ShowFoodGames() ///////////////////////////////////////////////
-    {
-        gamesFoodCanvas.gameObject.SetActive(true);
-    }
-
-    public void HideFoodGames()
-    {
-        gamesFoodCanvas.gameObject.SetActive(false);
-    }
-
-    public void ShowGodsGames()
-    {
-        gamesGodsCanvas.gameObject.SetActive(true);
-    }
-
-    public void HideGodsGames()
-    {
-        gamesGodsCanvas.gameObject.SetActive(false);
-    }
-
-    public void ShowDiversityGames()
-    {
-        gamesDiversityCanvas.gameObject.SetActive(true);
-    }
-
-    public void HideDiversityGames()
-    {
-        gamesDiversityCanvas.gameObject.SetActive(false);
-    }
-
-    public void ShowAnimalGames()
-    {
-        gamesAnimalsCanvas.gameObject.SetActive(true);
-    }
-
-    public void HideAnimalGames()
-    {
-        gamesAnimalsCanvas.gameObject.SetActive(false);
-    }
-
-    public void ShowCandyGames()
-    {
-        gamesCandyCanvas.gameObject.SetActive(true);
-    }
-
-    public void HideCandyGames()
-    {
-        gamesCandyCanvas.gameObject.SetActive(false);
-    }
-
-    public void ShowHandcraftGames()
-    {
-        gamesHandCraftCanvas.gameObject.SetActive(true);
-    }
-
-    public void HideHandcraftGames()
-    {
-        gamesHandCraftCanvas.gameObject.SetActive(false);
-    }
-
+ 
     public void ShowOriginalCanvas()
     {
-        originalCanvas.gameObject.SetActive(true);
+        CanvasCategorias.gameObject.SetActive(true);
     }
 
     public void HideOriginalCanvas()
     {
-        originalCanvas.gameObject.SetActive(false);
+        CanvasCategorias.gameObject.SetActive(false);
     }
 }
 

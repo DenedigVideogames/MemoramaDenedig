@@ -10,7 +10,7 @@ using TMPro;
 public class Spawn_Max : MonoBehaviour
 {
     public Sprite[] imagenesdeCartas;
-    public TextMeshPro[] textodeCartas;
+    public string[] textodeCartas;
     public int filas = 8;
     public int columnas = 3;
     public Vector2 espacio = Vector2.zero;

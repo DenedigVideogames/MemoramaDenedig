@@ -5,7 +5,6 @@ public class Cards : MonoBehaviour
 {
     public int id { get; set; }
     public SpriteRenderer cartaImagen;
-    public SpriteRenderer TextoImagen;
     public TextMeshPro textoimage;
 
     private int _selectcart;
@@ -14,7 +13,6 @@ public class Cards : MonoBehaviour
     public static GameObject cartavol1;
     public static GameObject cartavol2;
 
-
     public void OnMouseDown()
     {
         animopen.SetTrigger("Open");
@@ -22,7 +20,6 @@ public class Cards : MonoBehaviour
         Comparisons.CartasVolteadas += 1;
         _selectcart = this.id;
         _cartaselec = this.gameObject;
-        
 
         if (Comparisons.CartasVolteadas == 1)
         {
@@ -44,9 +41,8 @@ public class Cards : MonoBehaviour
         cartaImagen.sprite = imagen;
     }
 
-    public void AsignarTextodeCarta(TextMeshPro Texto)
+    public void AsignarTextodeCarta(string texto)
     {
-        textoimage.text = Texto.text;
+        textoimage.text = texto;
     }
-
 }

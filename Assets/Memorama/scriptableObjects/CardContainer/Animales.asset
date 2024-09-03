@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef594b83fa8ac048b1f0316245d9b18, type: 3}
   m_Name: Animales
   m_EditorClassIdentifier: 
-  cartas: []
+  cartas:
+  - {fileID: 11400000, guid: be4661d7afd2f9e4c9aa2fe17bf8526c, type: 2}
