@@ -20,6 +20,10 @@ public class Spawner : MonoBehaviour
     public Button waveButton;
     public bool MemoramaPlus;
 
+    private void Awake()
+    {
+        cartasContenedor = Settings.Instance.GetCarts();
+    }
     void Start()
     {
         CardIDs = MixCards(waveCardCounts[currentWave]);

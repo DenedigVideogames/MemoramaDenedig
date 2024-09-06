@@ -171,15 +171,15 @@ public class Settings : MonoBehaviour
         CanvasCategorias.gameObject.SetActive(false);
     }
 
-    public void SetGameCards(CardType cards)
+    public void SetGameCards(int cards)
     {
-        PlayerPrefs.SetInt("GameCards", (int)cards);
+        PlayerPrefs.SetInt("GameCards",cards);
         PlayerPrefs.Save();
     }
 
-    public void SetGameMode(GameMode gameMode)
+    public void SetGameMode(int gameMode)
     {
-        PlayerPrefs.SetInt("GameMode", (int)gameMode);
+        PlayerPrefs.SetInt("GameMode", gameMode);
         PlayerPrefs.Save();
     }
     public int GetGameMode()
@@ -193,18 +193,26 @@ public class Settings : MonoBehaviour
         return ContenedorCartas[gameMode]; 
     }
 
+    //Enums de referencia de modos de juego
     public enum GameMode
     {
-        Easy,
-        Medium,
-        Hard
+        Normal = 0,
+        Contrareloj = 1,
+        ContraRelosPlus = 2,
+        SinFallos = 3,
+        ModoVs = 4
     }
 
+    // Enums de referencia de tipos de cartas
     public enum CardType
     {
-        Basic,
-        Advanced,
-        Expert
+        Animales = 0,
+        Arquitectura = 1,
+        Artesanias = 2,
+        Alimentos = 3,
+        Dioses = 4,
+        DiversidadCultural = 5,
+        Dulces = 6,
+        Vestimenta = 7
     }
 }
-
