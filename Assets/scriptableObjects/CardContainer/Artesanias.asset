@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ef594b83fa8ac048b1f0316245d9b18, type: 3}
+  m_Name: Artesanias
+  m_EditorClassIdentifier: 
+  cartas:
+  - {fileID: 11400000, guid: 97f0ca90f4fb4ca47bdfa50d6ff68e26, type: 2}
+  - {fileID: 11400000, guid: 46e9c8353e3b50543ac32ba08ecb99b1, type: 2}
+  - {fileID: 11400000, guid: 24d1f894d9905c04e9697deff9dd154e, type: 2}
+  - {fileID: 11400000, guid: e202f26f187be6f489d5b316a9ea78e2, type: 2}
+  - {fileID: 11400000, guid: a2d7a94a576dba44e868ff1ea0bf310f, type: 2}
+  - {fileID: 11400000, guid: 98d441717b9a38045ba64e31e9fd13b8, type: 2}
+  - {fileID: 11400000, guid: 80424a0bdaf462b4c8c1da6bcbcd460f, type: 2}
+  - {fileID: 11400000, guid: 8490a68cc40a31e4bb1148923ed74815, type: 2}
+  - {fileID: 11400000, guid: fa46104242181354d9ab8c0129fa6118, type: 2}
+  - {fileID: 11400000, guid: beab731a4b2876d4282af2b62bfffcce, type: 2}
+  - {fileID: 11400000, guid: 3be4fc83af5f5504cb530a1d05eee4ed, type: 2}
+  - {fileID: 11400000, guid: 4fbbba9dc21b6f34f8a07f09d921377c, type: 2}
+  - {fileID: 11400000, guid: 9c6f2660f0a8807499f3f8a21a3e0127, type: 2}
+  - {fileID: 11400000, guid: f1e3900ca30ce3c438d58cd786d214cf, type: 2}
+  - {fileID: 11400000, guid: cf8b61881022226419d7166f2f287415, type: 2}

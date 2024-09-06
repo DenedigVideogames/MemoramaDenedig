@@ -12280,6 +12280,15 @@ MonoBehaviour:
   fadetimeout: 1
   scene: FoodScene
   CanvasCategorias: {fileID: 631338691}
+  ContenedorCartas:
+  - {fileID: 11400000, guid: 41f070b4f4eeec842a93351f5e521f28, type: 2}
+  - {fileID: 11400000, guid: fda00332bdb95a44bbf6a6cbd1bf6686, type: 2}
+  - {fileID: 11400000, guid: 58ece8f9abcd13d4d91b22510cb73dc5, type: 2}
+  - {fileID: 11400000, guid: 40c30819391225e4a82034153917c95c, type: 2}
+  - {fileID: 11400000, guid: 8f9358f08a236664ea3b5c09b04e780d, type: 2}
+  - {fileID: 11400000, guid: a6ce7afaa619f034b8fd8e011b8390f9, type: 2}
+  - {fileID: 11400000, guid: 79f77c5427742794bbe30827b9b9524c, type: 2}
+  - {fileID: 11400000, guid: a4ec747c99b34ea44b108b8099e38fd3, type: 2}
 --- !u!4 &623456917
 Transform:
   m_ObjectHideFlags: 0

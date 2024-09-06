@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -31,8 +32,11 @@ public class Settings : MonoBehaviour
     bool fadetoscene;
     public string scene;
 
-    [Header("TimerCanvas")]
+    [Header("Canvas")]
     public Canvas CanvasCategorias;
+
+    [Header("GameMode")]
+    public ContenedorCartas[] ContenedorCartas;
 
 
     void Awake()
@@ -165,6 +169,42 @@ public class Settings : MonoBehaviour
     public void HideOriginalCanvas()
     {
         CanvasCategorias.gameObject.SetActive(false);
+    }
+
+    public void SetGameCards(CardType cards)
+    {
+        PlayerPrefs.SetInt("GameCards", (int)cards);
+        PlayerPrefs.Save();
+    }
+
+    public void SetGameMode(GameMode gameMode)
+    {
+        PlayerPrefs.SetInt("GameMode", (int)gameMode);
+        PlayerPrefs.Save();
+    }
+    public int GetGameMode()
+    {
+        int gameMode = PlayerPrefs.GetInt("GameMode");
+        return gameMode;
+    }
+    public ContenedorCartas GetCarts()
+    {
+        int gameMode = PlayerPrefs.GetInt("GameCards"); 
+        return ContenedorCartas[gameMode]; 
+    }
+
+    public enum GameMode
+    {
+        Easy,
+        Medium,
+        Hard
+    }
+
+    public enum CardType
+    {
+        Basic,
+        Advanced,
+        Expert
     }
 }
 
