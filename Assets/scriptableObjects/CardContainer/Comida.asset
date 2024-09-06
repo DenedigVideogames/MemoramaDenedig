@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ef594b83fa8ac048b1f0316245d9b18, type: 3}
+  m_Name: Comida
+  m_EditorClassIdentifier: 
+  cartas:
+  - {fileID: 11400000, guid: 4869f2c25c1ab804da0d892e15dbb3b5, type: 2}
+  - {fileID: 11400000, guid: c516b83dfee34434fadc760c12ea8ee9, type: 2}
+  - {fileID: 11400000, guid: b31d8d233f98c384294a898b8854548a, type: 2}
+  - {fileID: 11400000, guid: 34e6e54773a5c1641a23c61c3557dd3b, type: 2}
+  - {fileID: 11400000, guid: 8b2e43b4b71a6f942a907175ac54d7de, type: 2}
+  - {fileID: 11400000, guid: b88f0c66c9f2c8543aad1f6ee7dc9991, type: 2}
+  - {fileID: 11400000, guid: 8d211e1309bc67d43ad0c0853480ad98, type: 2}
+  - {fileID: 11400000, guid: 281e7f5e8901862449300e7f5a8714ea, type: 2}
+  - {fileID: 11400000, guid: 50d64774e6c2bf24b8173b0e494924e8, type: 2}
+  - {fileID: 11400000, guid: eccca9c1268ba784f80121c3888e40f4, type: 2}
+  - {fileID: 11400000, guid: 3ba2e31816424564a865587cf6ff80ca, type: 2}
+  - {fileID: 11400000, guid: 416ecc28ac96d0e48816ff52f48330ae, type: 2}
+  - {fileID: 11400000, guid: e85d4fdd3df5d1b46a30268c9abe81a5, type: 2}
+  - {fileID: 11400000, guid: f14722be0e8203f49b103deb7f38c6e7, type: 2}
+  - {fileID: 11400000, guid: 9579acea1dbbd404a89b532a0da9adc6, type: 2}
+  - {fileID: 11400000, guid: 93f66f6d5f8773948b4a413fa341168f, type: 2}
+  - {fileID: 11400000, guid: 7ecefab9633404d4b97305741ee9ea49, type: 2}
+  - {fileID: 11400000, guid: 926f7c1ffd7db7b40ade076a81701828, type: 2}

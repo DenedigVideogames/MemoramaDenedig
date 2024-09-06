@@ -6,80 +6,83 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Santy/Scenes/MenuMemorama.unity
+    path: Assets/Memorama/Scenes/MenuMemorama.unity
     guid: 196e3d93f80b88a47993f03054b9d365
   - enabled: 1
-    path: Assets/_Santy/Scenes/FoodScene.unity
+    path: Assets/Memorama/Scenes/Basicos/FoodScene.unity
     guid: a84dfb79d455e364b9a13ea1d9c73f1a
   - enabled: 1
-    path: Assets/_Santy/Scenes/GodsScene.unity
+    path: Assets/Memorama/Scenes/Basicos/GodsScene.unity
     guid: 586d03c8fe7b18343a2a8613ab618261
   - enabled: 1
-    path: Assets/_Santy/Scenes/CulturalDiversityScene.unity
+    path: Assets/Memorama/Scenes/Basicos/CulturalDiversityScene.unity
     guid: fc74beb987eff464ea1ee83fa87885ca
   - enabled: 1
-    path: Assets/_Santy/Scenes/AnimalScene.unity
+    path: Assets/Memorama/Scenes/Basicos/AnimalScene.unity
     guid: 7530491f52b5bdb4cac49b6794e9b927
   - enabled: 1
-    path: Assets/_Santy/Scenes/CandyScene.unity
+    path: Assets/Memorama/Scenes/Basicos/CandyScene.unity
     guid: 5940526e1d5e3c44b9f668d6bdc676e6
   - enabled: 1
-    path: Assets/_Santy/Scenes/HandcraftScene.unity
+    path: Assets/Memorama/Scenes/Basicos/HandcraftScene.unity
     guid: 155a28880073e4c4f823526acb6c646e
   - enabled: 1
-    path: Assets/Raccoon/Scenes/TimerScenes/AnimalTimer.unity
+    path: Assets/Memorama/Scenes/TimerScenes/AnimalTimer.unity
     guid: 0f08bf57d9b2bd54dab3ca8c7300acf2
   - enabled: 1
-    path: Assets/Raccoon/Scenes/TimerScenes/CandyTimer.unity
+    path: Assets/Memorama/Scenes/TimerScenes/CandyTimer.unity
     guid: bd8cb1b72b3fa0a459ce42b686d4725e
   - enabled: 1
-    path: Assets/Raccoon/Scenes/TimerScenes/CulturalTimer.unity
+    path: Assets/Memorama/Scenes/TimerScenes/CulturalTimer.unity
     guid: 9a61d43320e121f458f122528b79b724
   - enabled: 1
-    path: Assets/Raccoon/Scenes/TimerScenes/FoodTimer.unity
+    path: Assets/Memorama/Scenes/TimerScenes/FoodTimer.unity
     guid: afbc94e52667a7148846d96afd050e16
   - enabled: 1
-    path: Assets/Raccoon/Scenes/TimerScenes/GodsTimer.unity
+    path: Assets/Memorama/Scenes/TimerScenes/GodsTimer.unity
     guid: f470f3fb15e3996499b10205dfc24de5
   - enabled: 1
-    path: Assets/Raccoon/Scenes/TimerScenes/HandcraftTimer.unity
+    path: Assets/Memorama/Scenes/TimerScenes/HandcraftTimer.unity
     guid: 3adc13573fc9cca4f97d6d6b9a24ec1c
   - enabled: 1
-    path: Assets/Raccoon/Scenes/ScenesPlus/AnimalTimerPlus.unity
+    path: Assets/Memorama/Scenes/ScenesPlus/AnimalTimerPlus.unity
     guid: 7f5943e3212f3a9479915cdff55f9c80
   - enabled: 1
-    path: Assets/Raccoon/Scenes/ScenesPlus/CandyTimerPlus.unity
+    path: Assets/Memorama/Scenes/ScenesPlus/CandyTimerPlus.unity
     guid: 9c4c88f80dc441d4c9d5e3e6275989f4
   - enabled: 1
-    path: Assets/Raccoon/Scenes/ScenesPlus/CulturalTimerPlus.unity
+    path: Assets/Memorama/Scenes/ScenesPlus/CulturalTimerPlus.unity
     guid: c317d67066d90764fa7cc53b101f68d5
   - enabled: 1
-    path: Assets/Raccoon/Scenes/ScenesPlus/FoodTimerPlus.unity
+    path: Assets/Memorama/Scenes/ScenesPlus/FoodTimerPlus.unity
     guid: 2e4c453e59bd3fc4baf4b2e9f2e3e929
   - enabled: 1
-    path: Assets/Raccoon/Scenes/ScenesPlus/GodsTimerPlus.unity
+    path: Assets/Memorama/Scenes/ScenesPlus/GodsTimerPlus.unity
     guid: 9d7b262599175984589ed0fea520c494
   - enabled: 1
-    path: Assets/Raccoon/Scenes/ScenesPlus/HandcraftTimerPlus.unity
+    path: Assets/Memorama/Scenes/ScenesPlus/HandcraftTimerPlus.unity
     guid: daccff33e93a8a54ea1615c8ddfaea6c
   - enabled: 1
-    path: Assets/Raccoon/Scenes/NewMemorama/AnimalNew.unity
+    path: Assets/Memorama/Scenes/NewMemorama/AnimalNew.unity
     guid: 3e71ec8fc29b89342873eebe2a94f263
   - enabled: 1
-    path: Assets/Raccoon/Scenes/NewMemorama/CandyNew.unity
+    path: Assets/Memorama/Scenes/NewMemorama/CandyNew.unity
     guid: ea58b1d627485ae458392320032e6829
   - enabled: 1
-    path: Assets/Raccoon/Scenes/NewMemorama/CulturalDiversityNew.unity
+    path: Assets/Memorama/Scenes/NewMemorama/CulturalDiversityNew.unity
     guid: 98fd0b0b32d939e4d80ba5d959754aa4
   - enabled: 1
-    path: Assets/Raccoon/Scenes/NewMemorama/FoodNew.unity
+    path: Assets/Memorama/Scenes/NewMemorama/FoodNew.unity
     guid: 60aaf89b710b8594985b86f951295e4e
   - enabled: 1
-    path: Assets/Raccoon/Scenes/NewMemorama/GodsNew.unity
+    path: Assets/Memorama/Scenes/NewMemorama/GodsNew.unity
     guid: ec105aa3651ddd94c9654dafeb43b823
   - enabled: 1
-    path: Assets/Raccoon/Scenes/NewMemorama/HandcraftNew.unity
+    path: Assets/Memorama/Scenes/NewMemorama/HandcraftNew.unity
     guid: eddac42a475134546989c1e63c789acb
+  - enabled: 1
+    path: Assets/Memorama/Scenes/SceneMultiGameMode.unity
+    guid: ac976a60de1b65f4fb3b87f82fb23fbd
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 145b431bfb93c394d8fe8ac7c0b61fa9, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: ad58d420f7fcafe4fb48870c82f2dcdf, type: 2}
