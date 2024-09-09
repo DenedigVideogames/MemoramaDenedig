@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Comparisons : MonoBehaviour
 {
+    public static Comparisons Instance { get; private set; }
+
     public TextMeshProUGUI CheckText;
     public TextMeshProUGUI WrongText;
 
@@ -52,6 +54,17 @@ public class Comparisons : MonoBehaviour
 
     public Transform[] pilas;
 
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
     void Start()
     {
         timepause = false;
@@ -63,10 +76,8 @@ public class Comparisons : MonoBehaviour
         errores = 0;
     }
 
-    void Update()
+    public void CheckPar()
     {
-        CheckText.text = aciertos + " / " + (spawner.MemoramaPlus ? "28" : "X");
-
         if (CartasVolteadas == 2)
         {
             if (firstID == secondID)
@@ -77,31 +88,6 @@ public class Comparisons : MonoBehaviour
             {
                 HandleMismatch();
             }
-        }
-    }
-
-    private void CheckTextAciertos()
-    {
-        CheckText.text = aciertos + " / " + (spawner.MemoramaPlus ? "28" : "X");
-    }
-
-    private void CheckPar()
-    {
-
-        if (CartasVolteadas == 2)
-        {
-            if (firstID == secondID)
-            {
-                HandleMatch();
-            }
-            else
-            {
-                HandleMismatch();
-            }
-        }
-        else
-        {
-            CartasVolteadas++;
         }
     }
 
@@ -120,7 +106,7 @@ public class Comparisons : MonoBehaviour
 
         Settings.Instance.PlaySfx("Completado");
         StartCoroutine(Makebig());
-
+        CheckTextAciertos();
         CartasVolteadas = 0;
     }
 
@@ -139,6 +125,11 @@ public class Comparisons : MonoBehaviour
         StartCoroutine(Corspaw());
 
         CartasVolteadas = 0;
+    }
+
+    private void CheckTextAciertos()
+    {
+        CheckText.text = aciertos + " / " + (spawner.MemoramaPlus ? "28" : "28");
     }
 
     private void UpdateScore()

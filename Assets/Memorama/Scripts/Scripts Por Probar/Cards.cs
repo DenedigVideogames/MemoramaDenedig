@@ -10,11 +10,10 @@ public class Cards : MonoBehaviour
     private int _selectcart;
     private GameObject _cartaselec;
     public Animator animopen;
-    public static GameObject cartavol1;
-    public static GameObject cartavol2;
 
     public void OnMouseDown()
     {
+        if (Comparisons.CartasVolteadas == 2) return;
         animopen.SetTrigger("Open");
         Settings.Instance.PlaySfx("VolteoCarta");
         Comparisons.CartasVolteadas += 1;
@@ -27,12 +26,12 @@ public class Cards : MonoBehaviour
             Comparisons.firstID = _selectcart;
             Comparisons.cartavol1 = _cartaselec;
         }
-
-        if (Comparisons.CartasVolteadas == 2)
+        else if (Comparisons.CartasVolteadas == 2)
         {
             this.GetComponent<BoxCollider>().enabled = false;
             Comparisons.secondID = _selectcart;
             Comparisons.cartavol2 = _cartaselec;
+            Comparisons.Instance.CheckPar();  // Llamada a la verificación
         }
     }
 
