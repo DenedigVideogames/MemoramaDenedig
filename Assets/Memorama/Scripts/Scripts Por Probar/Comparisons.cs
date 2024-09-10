@@ -291,20 +291,29 @@ public class Comparisons : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         StopAllCoroutines();
     }
-
     void CorrectParPos()
     {
         if (Cuentalugar <= pilas.Length)
         {
-            SetCardTransform(cartavol1, pilas[Cuentalugar - 1]);
-            SetCardTransform(cartavol2, pilas[Cuentalugar - 1], new Vector3(.12f, 0, .1f));
+            // Asignar posición y rotación a la primera carta
+            SetCardTransform(cartavol1, pilas[Cuentalugar - 1],new Vector3(0,0,0),Quaternion.Euler(-80,90,90));
+
+            // Asignar posición, rotación y offset a la segunda carta
+            SetCardTransform(cartavol2, pilas[Cuentalugar - 1], new Vector3(.12f, 0, .1f), Quaternion.Euler(-90, 0, 180));
         }
     }
 
-    private void SetCardTransform(GameObject card, Transform target, Vector3 offset = default)
+    private void SetCardTransform(GameObject card, Transform target, Vector3 offset = default, Quaternion rotation = default)
     {
-        card.transform.position = target.position + offset;
+        Vector3 finalPosition = target.position + offset;
+
+        card.transform.position = finalPosition;
         card.transform.localScale = size;
+        card.transform.rotation = rotation == default ? Quaternion.identity : rotation;
+
         card.GetComponent<Collider>().enabled = false;
+
+        Debug.Log($"Card: {card.name} - Position: {finalPosition} - Rotation: {card.transform.rotation.eulerAngles} - Offset: {offset}");
     }
+
 }
