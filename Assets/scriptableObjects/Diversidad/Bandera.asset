@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Bandera
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 1cd26141b740c7d47b37d6f69ef5b1e4, type: 3}
-  nombre: 
+  nombre: Bandera

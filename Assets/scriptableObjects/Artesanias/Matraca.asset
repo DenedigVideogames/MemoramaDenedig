@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Matraca
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 84375679cfc5b09409a6a17179bbbd6c, type: 3}
-  nombre: 
+  nombre: Matraca

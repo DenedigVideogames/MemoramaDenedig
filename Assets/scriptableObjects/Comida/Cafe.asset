@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Cafe
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: d3e69a1fb42aaf04fac25bb1a03b6fa0, type: 3}
-  nombre: 
+  nombre: Cafe

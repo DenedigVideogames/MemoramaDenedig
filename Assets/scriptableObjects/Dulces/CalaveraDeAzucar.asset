@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CalaveraDeAzucar
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 9fc82ecfaaacb744aa6f5590e459d240, type: 3}
-  nombre: 
+  nombre: CalaveraDeAzucar

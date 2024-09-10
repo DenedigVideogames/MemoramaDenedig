@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Oro
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 956f8b20fbc1dc142870ea12b86fd118, type: 3}
-  nombre: 
+  nombre: Oro

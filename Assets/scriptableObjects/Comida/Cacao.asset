@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Cacao
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 67140193290932d44aab6c34ba18a89f, type: 3}
-  nombre: 
+  nombre: Cacao

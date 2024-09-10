@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Mariposa
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 860d24ac8db32ff478d71e8fadda66af, type: 3}
-  nombre: 
+  nombre: Mariposa

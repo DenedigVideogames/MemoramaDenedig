@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Nopal
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: b4b19afc1ab808743b7a68b3d8417666, type: 3}
-  nombre: 
+  nombre: Nopal

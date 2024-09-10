@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Calabaza
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 777c3c59fa50e91429845544e3d091bb, type: 3}
-  nombre: 
+  nombre: Calabaza

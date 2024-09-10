@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Mole
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 120ce1599260a4b449b1eb853dcba776, type: 3}
-  nombre: 
+  nombre: Mole

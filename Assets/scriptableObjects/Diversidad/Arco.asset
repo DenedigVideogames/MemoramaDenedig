@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Arco
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 4b4f3dda96ae5cb47a635b7d74623fb9, type: 3}
-  nombre: 
+  nombre: Arco

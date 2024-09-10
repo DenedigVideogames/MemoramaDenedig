@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Lobo
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: e1cb9523b9a48024f880dac5b533376c, type: 3}
-  nombre: 
+  nombre: Lobo

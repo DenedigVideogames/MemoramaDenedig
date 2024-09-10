@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Tlaloc
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: b6c4bc242d9c85f428b1113a5baf4b84, type: 3}
-  nombre: 
+  nombre: Tlaloc

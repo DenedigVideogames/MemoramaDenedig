@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Velas
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 29694876615d5074ea07aab06409490d, type: 3}
-  nombre: 
+  nombre: Velas

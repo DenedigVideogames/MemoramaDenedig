@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Pirulina
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: b3e37cc0dfa2a244f8e1f269780a06c5, type: 3}
-  nombre: 
+  nombre: Pirulina

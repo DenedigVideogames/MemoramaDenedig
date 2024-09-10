@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Alebrije
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 6b520e8f1df61ad46b83fb38e01c7541, type: 3}
-  nombre: 
+  nombre: Alebrije

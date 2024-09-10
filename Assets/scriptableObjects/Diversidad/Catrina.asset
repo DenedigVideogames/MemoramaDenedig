@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Catrina
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: d6c655a1fd050dc49a44943fac733035, type: 3}
-  nombre: 
+  nombre: Catrina

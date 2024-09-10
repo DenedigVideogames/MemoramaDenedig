@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Esquites
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 29b09f47460460643a3b86bd3f2e968e, type: 3}
-  nombre: 
+  nombre: Esquites

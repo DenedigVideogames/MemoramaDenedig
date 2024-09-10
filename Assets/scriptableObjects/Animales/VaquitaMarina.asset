@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: VaquitaMarina
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 1023f865af3524d4499554cb31c6bc1a, type: 3}
-  nombre: 
+  nombre: VaquitaMarina

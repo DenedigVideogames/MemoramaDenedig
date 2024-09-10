@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Tequila
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: fb02c1d3765d2bb4cbf1195b37c4a4e6, type: 3}
-  nombre: 
+  nombre: Tequila

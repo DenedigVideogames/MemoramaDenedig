@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Trajinera
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 950f6d5b1f269a147ab7b639e563ea5d, type: 3}
-  nombre: 
+  nombre: Trajinera

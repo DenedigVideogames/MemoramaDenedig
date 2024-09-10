@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PapelPicado
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: a9a4f18c6a115624b8fa6b096ccaa279, type: 3}
-  nombre: 
+  nombre: PapelPicado

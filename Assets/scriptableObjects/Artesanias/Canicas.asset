@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Canicas
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: f7ccf6fdd24e6a340bf2bb279b89fa1c, type: 3}
-  nombre: 
+  nombre: Canicas

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Maiz
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 515c8bc64c1745f49a64c07e5cb8986c, type: 3}
-  nombre: 
+  nombre: Maiz

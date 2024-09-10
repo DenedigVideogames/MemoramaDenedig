@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: AtrapaNovias
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 0adda8176856fac408535e188b884779, type: 3}
-  nombre: 
+  nombre: AtrapaNovias

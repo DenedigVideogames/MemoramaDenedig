@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Tarugos
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 5d119c58fac73634ea1835ee9d0ac1b2, type: 3}
-  nombre: 
+  nombre: Tarugos

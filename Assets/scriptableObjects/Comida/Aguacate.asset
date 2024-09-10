@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Aguacate
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 2f6eeac893773144a92ea990748f8c03, type: 3}
-  nombre: 
+  nombre: Aguacate
