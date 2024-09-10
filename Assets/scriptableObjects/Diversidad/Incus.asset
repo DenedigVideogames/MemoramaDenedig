@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Incus
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 70a796e7ac8c95842b12bf3e96dbb2b4, type: 3}
-  nombre: 
+  nombre: Incus

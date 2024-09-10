@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Balero
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 440f193f9f0293a4db2a863bbd343217, type: 3}
-  nombre: 
+  nombre: Balero

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: NaranjasConChocolate
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: c2ceb3a9a1c4abf49b823d921a854d96, type: 3}
-  nombre: 
+  nombre: NaranjasConChocolate

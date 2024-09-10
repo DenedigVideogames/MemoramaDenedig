@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Zopilote
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: d0cf8ea2b7117a943805dbce6a81101d, type: 3}
-  nombre: 
+  nombre: Zopilote

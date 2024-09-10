@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Colibri
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 921aa8d5c7501614490809fdf6a40491, type: 3}
-  nombre: 
+  nombre: Colibri

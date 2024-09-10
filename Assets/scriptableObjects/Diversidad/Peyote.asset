@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Peyote
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: e562f25fcfa554946b260c3c35cb3384, type: 3}
-  nombre: 
+  nombre: Peyote

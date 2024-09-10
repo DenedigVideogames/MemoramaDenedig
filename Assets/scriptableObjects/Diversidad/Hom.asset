@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Hom
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: f452f8175c794d246b7f3eeec1597c2f, type: 3}
-  nombre: 
+  nombre: Hom

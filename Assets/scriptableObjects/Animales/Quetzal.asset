@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Quetzal
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 785d40af8947720439c3c7fd9a13f258, type: 3}
-  nombre: 
+  nombre: Quetzal

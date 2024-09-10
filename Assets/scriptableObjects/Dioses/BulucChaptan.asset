@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BulucChaptan
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 3dd98de59b596554587dc4bbb93d4923, type: 3}
-  nombre: 
+  nombre: BulucChaptan

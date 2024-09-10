@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Camote
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: f9d1ce8944170f5439e6e54150d6f71f, type: 3}
-  nombre: 
+  nombre: Camote

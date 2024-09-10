@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: RolloDeGuayaba
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 66e64b5d3a409904d81992159535f9e5, type: 3}
-  nombre: 
+  nombre: RolloDeGuayaba

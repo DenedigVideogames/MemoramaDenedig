@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Algodon
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 2a28698f50309974fa64c7660a4cb128, type: 3}
-  nombre: 
+  nombre: Algodon

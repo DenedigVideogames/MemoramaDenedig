@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Chacc
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: a746aceec3655f14d929b498aedc5166, type: 3}
-  nombre: 
+  nombre: Chacc

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CalendarioMaya
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 2bea6f99ef689854a8d5bc2989ddc18a, type: 3}
-  nombre: 
+  nombre: CalendarioMaya

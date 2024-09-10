@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CoquiBelzelao
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: a23b1a3608974d64ab7234622c8840b6, type: 3}
-  nombre: 
+  nombre: CoquiBelzelao

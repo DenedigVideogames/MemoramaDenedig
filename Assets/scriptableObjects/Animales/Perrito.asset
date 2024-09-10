@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Perrito
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 1bccbb94d8b11714587911c230581bbf, type: 3}
-  nombre: 
+  nombre: Perrito

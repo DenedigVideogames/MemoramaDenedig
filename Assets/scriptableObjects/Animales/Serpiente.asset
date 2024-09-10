@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Serpiente
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: c0c0d30c6b9643947baa27a6ebfb7c68, type: 3}
-  nombre: 
+  nombre: Serpiente

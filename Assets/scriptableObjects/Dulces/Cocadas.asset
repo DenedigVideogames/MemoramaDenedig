@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Cocadas
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: ffa656f0bc739cc498dc28eb83f9262c, type: 3}
-  nombre: 
+  nombre: Cocadas

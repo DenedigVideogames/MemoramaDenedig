@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Atole
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 305ec512c6cbee241ae2e58f42cd616b, type: 3}
-  nombre: 
+  nombre: Atole

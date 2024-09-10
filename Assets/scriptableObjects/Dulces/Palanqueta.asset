@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Palanqueta
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 654d2669ff485af48a520c7dcf710dcd, type: 3}
-  nombre: 
+  nombre: Palanqueta

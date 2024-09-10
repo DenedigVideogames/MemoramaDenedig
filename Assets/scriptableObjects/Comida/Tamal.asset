@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Tamal
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 2ff4e3c39b107294c959f83ba71ae538, type: 3}
-  nombre: 
+  nombre: Tamal

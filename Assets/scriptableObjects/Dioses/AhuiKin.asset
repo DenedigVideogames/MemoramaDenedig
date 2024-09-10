@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: AhuiKin
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: b73febb10aa1b264aa7116cb47d3d287, type: 3}
-  nombre: 
+  nombre: AhuiKin

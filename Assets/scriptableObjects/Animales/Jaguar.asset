@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Jaguar
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 7df47aa6fbaa7f645a349939d2054387, type: 3}
-  nombre: 
+  nombre: Jaguar

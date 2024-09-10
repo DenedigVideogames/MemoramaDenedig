@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Sombrero
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 990574e6e2dcd324a9d21c50002e933b, type: 3}
-  nombre: 
+  nombre: Sombrero

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Tacos
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 77becf2d302c65e42b02e6bdca937e94, type: 3}
-  nombre: 
+  nombre: Tacos

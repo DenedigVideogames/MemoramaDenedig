@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ArbolDeLaVida
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 96b9afcde73c74d479057c85155fb078, type: 3}
-  nombre: 
+  nombre: ArbolDeLaVida

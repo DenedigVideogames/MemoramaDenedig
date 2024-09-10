@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Huarache
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: de1903f5e9669d4449fe18b93536ac5c, type: 3}
-  nombre: 
+  nombre: Huarache

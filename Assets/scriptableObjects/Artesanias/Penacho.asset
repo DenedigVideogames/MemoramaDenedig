@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Penacho
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: f934fcaa3e408dc4d9fb28fbcfd544a7, type: 3}
-  nombre: 
+  nombre: Penacho

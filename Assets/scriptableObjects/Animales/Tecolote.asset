@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Tecolote
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: afd66710b61772949966cd2041ae7060, type: 3}
-  nombre: 
+  nombre: Tecolote

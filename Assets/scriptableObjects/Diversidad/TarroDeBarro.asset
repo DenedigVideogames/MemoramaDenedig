@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: TarroDeBarro
   m_EditorClassIdentifier: 
   imagen: {fileID: 21300000, guid: 9ae1b386a9791de42a9b0419c8c5df98, type: 3}
-  nombre: 
+  nombre: TarroDeBarro
