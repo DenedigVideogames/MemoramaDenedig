@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 18047340}
   - component: {fileID: 18047339}
   - component: {fileID: 18047343}
+  - component: {fileID: 18047344}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -227,7 +228,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18047337}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d2bc87c51fc6c64eb355180edc90d76, type: 3}
   m_Name: 
@@ -240,7 +241,7 @@ MonoBehaviour:
   time: 0
   canvasScoreBoard: {fileID: 781269920}
   puntos: 900
-  sontiempo: {fileID: 2006575598}
+  soundtiempo: {fileID: 0}
 --- !u!114 &18047339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,7 +278,7 @@ MonoBehaviour:
   Ypos: 2
   nextwaveXpos: 1
   waveButton: {fileID: 663479240}
-  MemoramaPlus: 0
+  modoSinFallos: 0
 --- !u!114 &18047341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,8 +301,7 @@ MonoBehaviour:
   ruleta: {fileID: 806362398}
   rule: {fileID: 2007876488}
   canvascore: {fileID: 781269920}
-  timeCount: {fileID: 18047338}
-  timerCount: {fileID: 18047343}
+  timer: {fileID: 18047344}
   rachaCanvas: {fileID: 2226749827892988027}
   addTimeCanvas: {fileID: 0}
   timerPlus: 0
@@ -347,15 +347,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6405f3b0c1d7641b5798f53ee7ef2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timetext: {fileID: 0}
-  FinalTimeText: {fileID: 0}
-  Errors: {fileID: 0}
-  textScore: {fileID: 0}
-  time: 0
-  canvasScoreBoard: {fileID: 0}
-  gameOverCanvas: {fileID: 0}
-  puntos: 0
+  timetext: {fileID: 76907955}
+  FinalTimeText: {fileID: 1271648680}
+  Errors: {fileID: 596258198}
+  textScore: {fileID: 472371863}
+  time: 120
+  canvasScoreBoard: {fileID: 781269920}
+  gameOverCanvas: {fileID: 1758306937}
+  puntos: 900
   sontiempo: {fileID: 2006575598}
+--- !u!114 &18047344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18047337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da5e236d99237747a1e62e6083195fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMode: 0
+  timetext: {fileID: 76907955}
+  FinalTimeText: {fileID: 1271648680}
+  Errors: {fileID: 596258198}
+  textScore: {fileID: 472371863}
+  additionalTextScore: {fileID: 1918972386}
+  time: 0
+  canvasScoreBoard: {fileID: 781269920}
+  gameOverCanvas: {fileID: 1758306937}
+  puntos: 0
+  soundtiempo: {fileID: 2006575598}
 --- !u!1 &41744861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,6 +1310,7 @@ MonoBehaviour:
   fadetimeout: 2
   scene: MenuMemorama
   CanvasCategorias: {fileID: 0}
+  ContenedorCartas: []
 --- !u!4 &119744389
 Transform:
   m_ObjectHideFlags: 0

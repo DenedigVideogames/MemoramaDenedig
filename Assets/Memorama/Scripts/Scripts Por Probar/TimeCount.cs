@@ -17,7 +17,7 @@ public class TimeCount : MonoBehaviour
 
     public float puntos = 0;
 
-    public AudioSource sontiempo;
+    public AudioSource soundtiempo;
     private int i = 0;
 
 
@@ -33,17 +33,17 @@ public class TimeCount : MonoBehaviour
 
     public void pausasonidotiempo()
     {
-        sontiempo.Stop();
+        soundtiempo.Stop();
     }
 
     public void playsonidotiempo()
     {
-        sontiempo.Play();
+        soundtiempo.Play();
     }
 
     void Start()
     {
-        sontiempo.Play();
+        soundtiempo.Play();
         _isPaused = false;
         time = 0;
     }
@@ -68,7 +68,7 @@ public class TimeCount : MonoBehaviour
         {
             time += 0;
             DisplayTime(time);
-            sontiempo.Stop();
+            soundtiempo.Stop();
             FinalTimeText.text = time.ToString("0") + " segundos";
             Errors.text = Comparisons.errores.ToString();
             textScore.text = puntos.ToString("0");
@@ -85,7 +85,7 @@ public class TimeCount : MonoBehaviour
         {
             time += 0;
             DisplayTime(time);
-            sontiempo.Stop();
+            soundtiempo.Stop();
         }
 
         additionalTextScore.text = puntos.ToString("0");

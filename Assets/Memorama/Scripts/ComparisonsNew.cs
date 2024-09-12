@@ -218,7 +218,7 @@ public class ComparisonsNew : MonoBehaviour
         Checktimerend = false;
         timepause = false;
         Cuentalugar = Cuentalugar + 1;
-        timeCount.sontiempo.Play();
+        timeCount.soundtiempo.Play();
         Cursor.lockState = CursorLockMode.None;
         StopAllCoroutines();
     }

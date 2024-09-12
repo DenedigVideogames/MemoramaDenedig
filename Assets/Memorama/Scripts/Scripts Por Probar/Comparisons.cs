@@ -38,10 +38,9 @@ public class Comparisons : MonoBehaviour
 
     public GameObject canvascore;
 
-    public TimeCount timeCount;
-    public Timer timerCount;
+    public TimerManager timeManager; // Cambiado de TimeCount a TimerManager
 
-    private int rachaCount = 0;
+    private static int rachaCount = 0;  // Agregado contador de rachas
     public Canvas rachaCanvas;
     public Canvas addTimeCanvas;
 
@@ -65,6 +64,7 @@ public class Comparisons : MonoBehaviour
             Instance = this;
         }
     }
+
     void Start()
     {
         timepause = false;
@@ -94,29 +94,29 @@ public class Comparisons : MonoBehaviour
     private void HandleMatch()
     {
         aciertos++;
-        rachaCount++;
-        UpdateScore();
+        rachaCount++;  // Incrementa la racha en cada acierto
+        UpdateScore();  // Actualiza el puntaje
 
         if (timerPlus)
         {
-            timerCount.AddTime(3);
+            timeManager.AddTime(3);  // Añade tiempo
             addTimeCanvas.gameObject.SetActive(true);
-            Invoke("DesactivarTimeCanvas", 3.7f);
+            Invoke("DesactivarTimeCanvas", 3.7f);  // Desactiva el canvas después de un tiempo
         }
 
         Settings.Instance.PlaySfx("Completado");
-        StartCoroutine(Makebig());
-        CheckTextAciertos();
-        CartasVolteadas = 0;
+        StartCoroutine(Makebig());  // Inicia la animación de agrandar
+        CheckTextAciertos();  // Actualiza el texto de aciertos
+        CartasVolteadas = 0;  // Reinicia el contador de cartas volteadas
     }
 
     private void HandleMismatch()
     {
         errores++;
-        rachaCount = 0;
+        rachaCount = 0;  // Reinicia el contador de rachas en caso de error
         WrongText.text = errores.ToString();
 
-        if (spawner.MemoramaPlus && errores == 1)
+        if (spawner.modoSinFallos && errores == 1)
         {
             GameOver();
         }
@@ -129,17 +129,16 @@ public class Comparisons : MonoBehaviour
 
     private void CheckTextAciertos()
     {
-        CheckText.text = aciertos + " / " + (spawner.MemoramaPlus ? "28" : "28");
+        CheckText.text = aciertos + " / " + (spawner.modoSinFallos ? "28" : "28");
     }
 
     private void UpdateScore()
     {
         if (rachaCount >= 2)
         {
-            timeCount?.AddPoints(rachaCount);
-            timerCount?.AddPoints(rachaCount);
+            timeManager?.AddPoints(rachaCount);  // Añade puntos basados en la racha
             rachaCanvas.gameObject.SetActive(true);
-            Invoke("DesactivarRachaCanvas", 3.7f);
+            Invoke("DesactivarRachaCanvas", 3.7f);  // Desactiva el canvas de racha después de un tiempo
         }
     }
 
@@ -233,15 +232,15 @@ public class Comparisons : MonoBehaviour
 
     private IEnumerator Truespaw()
     {
-        yield return new WaitForSeconds(.8f);
+        yield return new WaitForSeconds(.5f);
         rule.enabled = false;
         ruleta.SetActive(false);
 
         CorrectParPos();
 
-        if (spawner.MemoramaPlus)
+        if (spawner.modoSinFallos)
         {
-            CheckMemoramaPlusConditions();
+            CheckMemoramaModoSinFallosConditions();
         }
         else
         {
@@ -251,7 +250,7 @@ public class Comparisons : MonoBehaviour
         ResetAfterSpawn();
     }
 
-    private void CheckMemoramaPlusConditions()
+    private void CheckMemoramaModoSinFallosConditions()
     {
         if (aciertos == 4 || aciertos == 10 || aciertos == 18 || aciertos == 28)
         {
@@ -286,19 +285,16 @@ public class Comparisons : MonoBehaviour
         Checktimerend = false;
         timepause = false;
         Cuentalugar++;
-        timeCount.sontiempo.Play();
-        timerCount.sontiempo.Play();
+        timeManager.soundtiempo.Play();
         Cursor.lockState = CursorLockMode.None;
         StopAllCoroutines();
     }
+
     void CorrectParPos()
     {
         if (Cuentalugar <= pilas.Length)
         {
-            // Asignar posición y rotación a la primera carta
-            SetCardTransform(cartavol1, pilas[Cuentalugar - 1],new Vector3(0,0,0),Quaternion.Euler(-80,90,90));
-
-            // Asignar posición, rotación y offset a la segunda carta
+            SetCardTransform(cartavol1, pilas[Cuentalugar - 1], new Vector3(0, 0, 0), Quaternion.Euler(-80, 90, 90));
             SetCardTransform(cartavol2, pilas[Cuentalugar - 1], new Vector3(.12f, 0, .1f), Quaternion.Euler(-90, 0, 180));
         }
     }
@@ -315,5 +311,4 @@ public class Comparisons : MonoBehaviour
 
         Debug.Log($"Card: {card.name} - Position: {finalPosition} - Rotation: {card.transform.rotation.eulerAngles} - Offset: {offset}");
     }
-
 }

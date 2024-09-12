@@ -15,10 +15,10 @@ public class Spawner : MonoBehaviour
     public float nextwaveXpos;
     private int currentWave = 0;
     private int[] waveCardCounts = { 8, 12, 16, 20 };
-    private int[] waveCardCountsPlus = { 8, 12, 16, 20 };
+    private int[] waveCardCountsModoSinFallos = { 8, 12, 16, 20 };
     private List<int> CardIDs;
     public Button waveButton;
-    public bool MemoramaPlus;
+    public bool modoSinFallos;
 
     private void Awake()
     {
@@ -29,18 +29,20 @@ public class Spawner : MonoBehaviour
         CardIDs = MixCards(waveCardCounts[currentWave]);
         SpawnCards(waveCardCounts[currentWave]);
 
-        if (MemoramaPlus)
+        //si se esta jugando el modo sin fallos
+        if (Settings.Instance.GetGameMode() == 3)
         {
-            StartMemoramaPlus();
+            modoSinFallos = true;
+            StartModoSinFallos();
         }
 
         waveButton.onClick.AddListener(OnWaveButtonClicked);
     }
 
-    void StartMemoramaPlus()
+    void StartModoSinFallos()
     {
-        CardIDs = MixCards(waveCardCountsPlus[currentWave]);
-        SpawnCards(waveCardCountsPlus[currentWave]);
+        CardIDs = MixCards(waveCardCountsModoSinFallos[currentWave]);
+        SpawnCards(waveCardCountsModoSinFallos[currentWave]);
         ActivateOpenAnimation();
         Invoke("ActivateCloseAnimation", 5f);
     }
@@ -85,19 +87,19 @@ public class Spawner : MonoBehaviour
 
     public void OnWaveButtonClicked()
     {
-        if (currentWave < (MemoramaPlus ? waveCardCountsPlus.Length : waveCardCounts.Length) - 1)
+        if (currentWave < (modoSinFallos ? waveCardCountsModoSinFallos.Length : waveCardCounts.Length) - 1)
         {
             currentWave++;
             Xpos += nextwaveXpos;
-            CardIDs = MixCards(MemoramaPlus ? waveCardCountsPlus[currentWave] : waveCardCounts[currentWave]);
+            CardIDs = MixCards(modoSinFallos ? waveCardCountsModoSinFallos[currentWave] : waveCardCounts[currentWave]);
 
-            if (MemoramaPlus)
+            if (modoSinFallos)
             {
                 ActivateOpenAnimation();
                 Invoke("ActivateCloseAnimation", 5f);
             }
 
-            SpawnCards(MemoramaPlus ? waveCardCountsPlus[currentWave] : waveCardCounts[currentWave]);
+            SpawnCards(modoSinFallos ? waveCardCountsModoSinFallos[currentWave] : waveCardCounts[currentWave]);
         }
     }
 
