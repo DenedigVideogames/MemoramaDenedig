@@ -41,7 +41,6 @@ public class Settings : MonoBehaviour
     public ContenedorCartas[] ContenedorCartas;
 
     [Header("Players name")]
-    public static InputText inputText;
     public TMP_InputField inputField;
 
     public string Player;
