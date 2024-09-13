@@ -226,13 +226,4 @@ public class ModeChange : MonoBehaviour
             acromatopsiaColor = false;
         }
     }
-    public void OnPlay()
-    {
-        DontDestroyField.isonmyFirstScene = false;
-    }
-
-    public void UnPause()
-    {
-        DontDestroyField.isonmyFirstScene = true;
-    }
 }

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Memorama/Scenes/MenuMemorama.unity
     guid: 196e3d93f80b88a47993f03054b9d365
   - enabled: 1
+    path: Assets/Memorama/Scenes/SceneMultiGameMode.unity
+    guid: ac976a60de1b65f4fb3b87f82fb23fbd
+  - enabled: 1
     path: Assets/Memorama/Scenes/Basicos/FoodScene.unity
     guid: a84dfb79d455e364b9a13ea1d9c73f1a
   - enabled: 1
@@ -80,9 +83,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Memorama/Scenes/NewMemorama/HandcraftNew.unity
     guid: eddac42a475134546989c1e63c789acb
-  - enabled: 1
-    path: Assets/Memorama/Scenes/SceneMultiGameMode.unity
-    guid: ac976a60de1b65f4fb3b87f82fb23fbd
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 145b431bfb93c394d8fe8ac7c0b61fa9, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: ad58d420f7fcafe4fb48870c82f2dcdf, type: 2}

@@ -74,6 +74,10 @@ public class Comparisons : MonoBehaviour
         Cuentalugar = 1;
         aciertos = 0;
         errores = 0;
+        if(Settings.Instance.GetGameMode() == 2)
+        {
+            timerPlus = true;
+        }
     }
 
     public void CheckPar()
@@ -101,7 +105,7 @@ public class Comparisons : MonoBehaviour
         {
             timeManager.AddTime(3);  // Añade tiempo
             addTimeCanvas.gameObject.SetActive(true);
-            Invoke("DesactivarTimeCanvas", 3.7f);  // Desactiva el canvas después de un tiempo
+            Invoke("DesactivarTimeCanvas", 2.5f);  // Desactiva el canvas después de un tiempo
         }
 
         Settings.Instance.PlaySfx("Completado");
@@ -308,7 +312,5 @@ public class Comparisons : MonoBehaviour
         card.transform.rotation = rotation == default ? Quaternion.identity : rotation;
 
         card.GetComponent<Collider>().enabled = false;
-
-        Debug.Log($"Card: {card.name} - Position: {finalPosition} - Rotation: {card.transform.rotation.eulerAngles} - Offset: {offset}");
     }
 }

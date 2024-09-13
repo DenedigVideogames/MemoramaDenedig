@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Settings : MonoBehaviour
 {
@@ -37,6 +39,13 @@ public class Settings : MonoBehaviour
 
     [Header("GameMode")]
     public ContenedorCartas[] ContenedorCartas;
+
+    [Header("Players name")]
+    public static InputText inputText;
+    public TMP_InputField inputField;
+
+    public string Player;
+
 
 
     void Awake()
@@ -109,6 +118,11 @@ public class Settings : MonoBehaviour
         SetSFXVolume();
     }
 
+    public void SetName()
+    {
+        Player = inputField.text;
+    }
+
     public void PlayMusic(string name)
     {
         SoundManager s = Array.Find(musicSounds, x => x.Name == name);
@@ -170,13 +184,11 @@ public class Settings : MonoBehaviour
     {
         CanvasCategorias.gameObject.SetActive(false);
     }
-
     public void SetGameCards(int cards)
     {
         PlayerPrefs.SetInt("GameCards",cards);
         PlayerPrefs.Save();
     }
-
     public void SetGameMode(int gameMode)
     {
         PlayerPrefs.SetInt("GameMode", gameMode);
@@ -192,7 +204,6 @@ public class Settings : MonoBehaviour
         int gameMode = PlayerPrefs.GetInt("GameCards"); 
         return ContenedorCartas[gameMode]; 
     }
-
     //Enums de referencia de modos de juego
     public enum GameMode
     {
@@ -202,7 +213,6 @@ public class Settings : MonoBehaviour
         SinFallos = 3,
         ModoVs = 4
     }
-
     // Enums de referencia de tipos de cartas
     public enum CardType
     {

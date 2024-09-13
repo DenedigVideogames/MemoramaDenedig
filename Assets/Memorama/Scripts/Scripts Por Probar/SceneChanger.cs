@@ -15,7 +15,7 @@ public class SceneChanger : MonoBehaviour
     {
         roundcanva.SetActive(false);
         falseresolver.SetActive(false);
-        playername.text = InputText.inputText.Player;
+        playername.text = Settings.Instance.Player;
     }
 
     void Update()
@@ -59,7 +59,6 @@ public class SceneChanger : MonoBehaviour
     public void UnPause()
     {
         falseresolver.SetActive(false);
-        DontDestroyField.isonmyFirstScene = true;
     }
 
     public void ResetSound()

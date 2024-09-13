@@ -41,7 +41,15 @@ public class TimerManager : MonoBehaviour
         }
         else if (Settings.Instance.GetGameMode() == 1 || Settings.Instance.GetGameMode() == 2)
         {
-            currentMode = GameMode.CountUp;
+            currentMode = GameMode.CountDown;
+        }
+        if(Settings.Instance.GetGameMode() == 1)
+        {
+            time = 180;
+        }
+        if(Settings.Instance.GetGameMode() == 2)
+        {
+            time = 30;
         }
     }
     void Start()
@@ -143,6 +151,7 @@ public class TimerManager : MonoBehaviour
 
     void GameOver()
     {
+        Debug.Log("GameOver");
         gameOverCanvas.SetActive(true);
         DeactivateAllColliders();
     }

@@ -17,7 +17,7 @@ public class LeaderBoard : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _personalEntryText;
 
-    public TimeCount timeCount;
+    public TimerManager timerManager;
     private int _playerScore;
     private float _playerScore1;
 
@@ -29,8 +29,8 @@ public class LeaderBoard : MonoBehaviour
     public void AddPlayerScore()
     {
 
-        _playerScore = (int)timeCount.puntos;
-        _playerScore1 = timeCount.puntos;
+        _playerScore = (int)timerManager.puntos;
+        _playerScore1 = timerManager.puntos;
         _playerScoreText.text = "Your score: " + _playerScore1;
 
     }
@@ -53,7 +53,7 @@ public class LeaderBoard : MonoBehaviour
     public void Submit()// Sonido boton sube puntuacion 
     {
         //Leaderboards.DemoSceneLeaderboard.UploadNewEntry(_playerUsernameInput.text, _playerScore, Callback, ErrorCallback);
-        Leaderboards.DemoSceneLeaderboard.UploadNewEntry(username.text, (int)timeCount.puntos, Callback, ErrorCallback);
+        Leaderboards.DemoSceneLeaderboard.UploadNewEntry(username.text, (int)timerManager.puntos, Callback, ErrorCallback);
         Debug.Log(username.text);
     }
 

@@ -208,11 +208,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 18047342}
-  - component: {fileID: 18047338}
   - component: {fileID: 18047341}
   - component: {fileID: 18047340}
   - component: {fileID: 18047339}
-  - component: {fileID: 18047343}
   - component: {fileID: 18047344}
   m_Layer: 0
   m_Name: GameManager
@@ -221,27 +219,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &18047338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 18047337}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d2bc87c51fc6c64eb355180edc90d76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timetext: {fileID: 76907955}
-  FinalTimeText: {fileID: 1271648680}
-  Errors: {fileID: 596258198}
-  textScore: {fileID: 472371863}
-  additionalTextScore: {fileID: 1918972386}
-  time: 0
-  canvasScoreBoard: {fileID: 781269920}
-  puntos: 900
-  soundtiempo: {fileID: 0}
 --- !u!114 &18047339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,7 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CheckText: {fileID: 1121514712}
   WrongText: {fileID: 399320047}
-  makebigtime: 3
+  makebigtime: 1
   size: {x: 0.3, y: 0.3, z: 0.3}
   centresize: {x: 1, y: 1, z: 1}
   tocenterleft: {fileID: 215939377}
@@ -301,9 +278,9 @@ MonoBehaviour:
   ruleta: {fileID: 806362398}
   rule: {fileID: 2007876488}
   canvascore: {fileID: 781269920}
-  timer: {fileID: 18047344}
+  timeManager: {fileID: 18047344}
   rachaCanvas: {fileID: 2226749827892988027}
-  addTimeCanvas: {fileID: 0}
+  addTimeCanvas: {fileID: 1025385763}
   timerPlus: 0
   spawner: {fileID: 18047340}
   gameOverCanvas: {fileID: 1758306937}
@@ -335,27 +312,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &18047343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 18047337}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f6405f3b0c1d7641b5798f53ee7ef2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timetext: {fileID: 76907955}
-  FinalTimeText: {fileID: 1271648680}
-  Errors: {fileID: 596258198}
-  textScore: {fileID: 472371863}
-  time: 120
-  canvasScoreBoard: {fileID: 781269920}
-  gameOverCanvas: {fileID: 1758306937}
-  puntos: 900
-  sontiempo: {fileID: 2006575598}
 --- !u!114 &18047344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,7 +333,7 @@ MonoBehaviour:
   time: 0
   canvasScoreBoard: {fileID: 781269920}
   gameOverCanvas: {fileID: 1758306937}
-  puntos: 0
+  puntos: 900
   soundtiempo: {fileID: 2006575598}
 --- !u!1 &41744861
 GameObject:
@@ -1310,7 +1266,17 @@ MonoBehaviour:
   fadetimeout: 2
   scene: MenuMemorama
   CanvasCategorias: {fileID: 0}
-  ContenedorCartas: []
+  ContenedorCartas:
+  - {fileID: 11400000, guid: 41f070b4f4eeec842a93351f5e521f28, type: 2}
+  - {fileID: 11400000, guid: 79f77c5427742794bbe30827b9b9524c, type: 2}
+  - {fileID: 11400000, guid: fda00332bdb95a44bbf6a6cbd1bf6686, type: 2}
+  - {fileID: 11400000, guid: 58ece8f9abcd13d4d91b22510cb73dc5, type: 2}
+  - {fileID: 11400000, guid: 40c30819391225e4a82034153917c95c, type: 2}
+  - {fileID: 11400000, guid: 8f9358f08a236664ea3b5c09b04e780d, type: 2}
+  - {fileID: 11400000, guid: a6ce7afaa619f034b8fd8e011b8390f9, type: 2}
+  - {fileID: 11400000, guid: a4ec747c99b34ea44b108b8099e38fd3, type: 2}
+  inputField: {fileID: 0}
+  Player: 
 --- !u!4 &119744389
 Transform:
   m_ObjectHideFlags: 0
@@ -2827,7 +2793,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 18047338}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TimeCount, Assembly-CSharp
         m_MethodName: GameUnPaused
         m_Mode: 1
@@ -2887,7 +2853,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 18047338}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TimeCount, Assembly-CSharp
         m_MethodName: playsonidotiempo
         m_Mode: 1
@@ -3220,6 +3186,141 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374915342}
+  m_CullTransparentMesh: 1
+--- !u!1 &380022823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 380022824}
+  - component: {fileID: 380022826}
+  - component: {fileID: 380022825}
+  m_Layer: 5
+  m_Name: Seg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &380022824
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380022823}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1025385764}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -624.1151, y: 52}
+  m_SizeDelta: {x: 305.7697, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &380022825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380022823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: +3seg
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 7aae6444f5998c044b053c29ad23b7e0, type: 2}
+  m_sharedMaterial: {fileID: -3340893768277072087, guid: 7aae6444f5998c044b053c29ad23b7e0, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 80.47
+  m_fontSizeBase: 80.47
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &380022826
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380022823}
   m_CullTransparentMesh: 1
 --- !u!1 &396371502
 GameObject:
@@ -9494,7 +9595,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 18047338}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TimeCount, Assembly-CSharp
         m_MethodName: playsonidotiempo
         m_Mode: 1
@@ -11223,7 +11324,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 119744388}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 3
@@ -11235,9 +11336,9 @@ MonoBehaviour:
           m_StringArgument: MenuMemorama
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: UnPause
+      - m_Target: {fileID: 18047344}
+        m_TargetAssemblyTypeName: TimerManager, Assembly-CSharp
+        m_MethodName: GameUnPaused
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11247,7 +11348,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 119744388}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: PlaySfx
         m_Mode: 5
@@ -11785,7 +11886,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 18047338}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TimeCount, Assembly-CSharp
         m_MethodName: GamePaused
         m_Mode: 1
@@ -11845,7 +11946,7 @@ MonoBehaviour:
           m_StringArgument: ButtonEntry
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 18047338}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TimeCount, Assembly-CSharp
         m_MethodName: pausasonidotiempo
         m_Mode: 1
@@ -13209,6 +13310,109 @@ RectTransform:
   m_AnchoredPosition: {x: -12, y: -84}
   m_SizeDelta: {x: 401.7, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1025385760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1025385764}
+  - component: {fileID: 1025385763}
+  - component: {fileID: 1025385762}
+  - component: {fileID: 1025385761}
+  m_Layer: 5
+  m_Name: Time
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1025385761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025385760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1025385762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025385760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &1025385763
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025385760}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1025385764
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025385760}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 380022824}
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &1039348492
 GameObject:
   m_ObjectHideFlags: 0
@@ -14791,7 +14995,7 @@ MonoBehaviour:
   - {fileID: 1933575523}
   username: {fileID: 705836071}
   _personalEntryText: {fileID: 1476176788}
-  timeCount: {fileID: 18047338}
+  timerManager: {fileID: 18047344}
 --- !u!4 &1234111342
 Transform:
   m_ObjectHideFlags: 0
@@ -18622,14 +18826,14 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 172359190}
   m_PlaneDistance: 100
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -18858,31 +19062,31 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: falsear
+      - m_Target: {fileID: 119744388}
+        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: AnimalTimer
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 18047344}
+        m_TargetAssemblyTypeName: TimerManager, Assembly-CSharp
+        m_MethodName: GameUnPaused
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: ButtonEntry
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
-        m_MethodName: RestartScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: AnimalTimer
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 119744388}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: PlaySfx
         m_Mode: 5
@@ -18892,18 +19096,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ButtonEntry
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: ResetSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1807711580
