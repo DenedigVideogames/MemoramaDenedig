@@ -9,8 +9,14 @@ public class Comparisons : MonoBehaviour
     public TextMeshProUGUI CheckText;
     public TextMeshProUGUI WrongText;
 
-    public static int aciertos = 0;
-    public static int errores = 0;
+    // Variables para el jugador 1 y jugador 2
+    public static int currentPlayer = 1;
+
+    public static int aciertosPlayer1 = 0;
+    public static int erroresPlayer1 = 0;
+    public static int aciertosPlayer2 = 0;
+    public static int erroresPlayer2 = 0;
+
     public static int CartasVolteadas = 0;
     public static int firstID;
     public static int secondID;
@@ -38,9 +44,8 @@ public class Comparisons : MonoBehaviour
 
     public GameObject canvascore;
 
-    public TimerManager timeManager; // Cambiado de TimeCount a TimerManager
-
-    private static int rachaCount = 0;  // Agregado contador de rachas
+    public TimerManager timeManager;
+    private static int rachaCount = 0;
     public Canvas rachaCanvas;
     public Canvas addTimeCanvas;
 
@@ -52,6 +57,7 @@ public class Comparisons : MonoBehaviour
     public GameObject gameOverCanvas;
 
     public Transform[] pilas;
+
 
     void Awake()
     {
@@ -72,9 +78,11 @@ public class Comparisons : MonoBehaviour
         rule.enabled = false;
         ruleta.SetActive(false);
         Cuentalugar = 1;
-        aciertos = 0;
-        errores = 0;
-        if(Settings.Instance.GetGameMode() == 2)
+        aciertosPlayer1 = 0;
+        erroresPlayer1 = 0;
+        aciertosPlayer2 = 0;
+        erroresPlayer2 = 0;
+        if (Settings.Instance.GetGameMode() == 2)
         {
             timerPlus = true;
         }
@@ -97,32 +105,51 @@ public class Comparisons : MonoBehaviour
 
     private void HandleMatch()
     {
-        aciertos++;
-        rachaCount++;  // Incrementa la racha en cada acierto
-        UpdateScore();  // Actualiza el puntaje
+        if (currentPlayer == 1)
+        {
+            aciertosPlayer1++;
+        }
+        else
+        {
+            aciertosPlayer2++;
+        }
+
+        rachaCount++;
+        UpdateScore();
 
         if (timerPlus)
         {
-            timeManager.AddTime(3);  // Añade tiempo
+            timeManager.AddTime(3);
             addTimeCanvas.gameObject.SetActive(true);
-            Invoke("DesactivarTimeCanvas", 2.5f);  // Desactiva el canvas después de un tiempo
+            Invoke("DesactivarTimeCanvas", 2.5f);
         }
 
         Settings.Instance.PlaySfx("Completado");
-        StartCoroutine(Makebig());  // Inicia la animación de agrandar
-        CheckTextAciertos();  // Actualiza el texto de aciertos
-        CartasVolteadas = 0;  // Reinicia el contador de cartas volteadas
+        StartCoroutine(Makebig());
+        CheckTextAciertos();
+        CartasVolteadas = 0;
     }
 
     private void HandleMismatch()
     {
-        errores++;
-        rachaCount = 0;  // Reinicia el contador de rachas en caso de error
-        WrongText.text = errores.ToString();
+        if (currentPlayer == 1)
+        {
+            erroresPlayer1++;
+        }
+        else
+        {
+            erroresPlayer2++;
+        }
 
-        if (spawner.modoSinFallos && errores == 1)
+        rachaCount = 0;
+
+        if (spawner.modoSinFallos && erroresPlayer1 == 1)
         {
             GameOver();
+        }
+        else if (Settings.Instance.GetGameMode() == 4)
+        {
+            ChangeTurn();
         }
 
         Settings.Instance.PlaySfx("Error");
@@ -133,19 +160,24 @@ public class Comparisons : MonoBehaviour
 
     private void CheckTextAciertos()
     {
-        CheckText.text = aciertos + " / " + (spawner.modoSinFallos ? "28" : "28");
+        CheckText.text = aciertosPlayer1 + " / " + (spawner.modoSinFallos ? "28" : "28");
     }
 
     private void UpdateScore()
     {
         if (rachaCount >= 2)
         {
-            timeManager?.AddPoints(rachaCount);  // Añade puntos basados en la racha
+            timeManager?.AddPoints(rachaCount);
             rachaCanvas.gameObject.SetActive(true);
-            Invoke("DesactivarRachaCanvas", 3.7f);  // Desactiva el canvas de racha después de un tiempo
+            Invoke("DesactivarRachaCanvas", 3.7f);
         }
     }
 
+    private void ChangeTurn()
+    {
+        currentPlayer = currentPlayer == 1 ? 2 : 1;
+        timeManager.ChangeTurn();
+    }
     void GameOver()
     {
         timepause = true;
@@ -241,43 +273,22 @@ public class Comparisons : MonoBehaviour
         ruleta.SetActive(false);
 
         CorrectParPos();
-
-        if (spawner.modoSinFallos)
-        {
-            CheckMemoramaModoSinFallosConditions();
-        }
-        else
-        {
-            CheckNormalConditions();
-        }
+       
+        CheckNormalConditions();
 
         ResetAfterSpawn();
     }
 
-    private void CheckMemoramaModoSinFallosConditions()
-    {
-        if (aciertos == 4 || aciertos == 10 || aciertos == 18 || aciertos == 28)
-        {
-            setcanvas = true;
-            Cuentalugar = 0;
-        }
-
-        if (aciertos == 37)
-        {
-            canvascore.SetActive(true);
-            setcanvascore = true;
-        }
-    }
-
     private void CheckNormalConditions()
     {
-        if (aciertos == 4 || aciertos == 10 || aciertos == 18 || aciertos == 28)
+        if (aciertosPlayer1 + aciertosPlayer2 == 4 || aciertosPlayer1 + aciertosPlayer2 == 10 || aciertosPlayer1 + aciertosPlayer2 == 18 || aciertosPlayer1 + aciertosPlayer2 == 28)
         {
             setcanvas = true;
+            SceneChanger.Instance.SetCanvas();
             Cuentalugar = 0;
         }
 
-        if (aciertos == 28)
+        if (aciertosPlayer1 + aciertosPlayer2 == 28)
         {
             canvascore.SetActive(true);
             setcanvascore = true;

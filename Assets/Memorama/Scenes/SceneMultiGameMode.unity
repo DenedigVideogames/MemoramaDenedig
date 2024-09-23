@@ -330,11 +330,13 @@ MonoBehaviour:
   Errors: {fileID: 596258198}
   textScore: {fileID: 472371863}
   additionalTextScore: {fileID: 1918972386}
-  time: 0
+  timePlayer1: 0
+  timePlayer2: 0
   canvasScoreBoard: {fileID: 781269920}
   gameOverCanvas: {fileID: 1758306937}
   puntos: 900
   soundtiempo: {fileID: 2006575598}
+  changePlayerTurn: 0
 --- !u!1 &41744861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,7 +1278,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a6ce7afaa619f034b8fd8e011b8390f9, type: 2}
   - {fileID: 11400000, guid: a4ec747c99b34ea44b108b8099e38fd3, type: 2}
   inputField: {fileID: 0}
-  Player: 
+  Player1: 
+  Player2: 
 --- !u!4 &119744389
 Transform:
   m_ObjectHideFlags: 0

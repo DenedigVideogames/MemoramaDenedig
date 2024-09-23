@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TimerManager : MonoBehaviour
 {
-    public enum GameMode { CountDown, CountUp }
+    public enum GameMode { CountDown, CountUp, TwoPlayer }
     public GameMode currentMode;
     public static TimerManager Instance { get; private set; }
 
@@ -16,7 +16,9 @@ public class TimerManager : MonoBehaviour
     public TMP_Text textScore;
     public TMP_Text additionalTextScore;
 
-    public float time;
+    public float timePlayer1;
+    public float timePlayer2;
+    public bool isPlayer1Turn = true;
     public GameObject canvasScoreBoard;
     public GameObject gameOverCanvas;
 
@@ -24,6 +26,8 @@ public class TimerManager : MonoBehaviour
     public AudioSource soundtiempo;
     private int i = 0;
     private Collider[] colliders;
+
+    public bool changePlayerTurn;
 
     private void Awake()
     {
@@ -35,7 +39,7 @@ public class TimerManager : MonoBehaviour
         {
             Instance = this;
         }
-        if (Settings.Instance.GetGameMode() == 0 || Settings.Instance.GetGameMode() == 3 || Settings.Instance.GetGameMode() == 4)
+        if (Settings.Instance.GetGameMode() == 0 || Settings.Instance.GetGameMode() == 3)
         {
             currentMode = GameMode.CountUp;
         }
@@ -43,13 +47,19 @@ public class TimerManager : MonoBehaviour
         {
             currentMode = GameMode.CountDown;
         }
-        if(Settings.Instance.GetGameMode() == 1)
+        else if (Settings.Instance.GetGameMode() == 4)
         {
-            time = 180;
+            currentMode = GameMode.TwoPlayer;
+            timePlayer1 = 0;
+            timePlayer2 = 0;
+        }
+        if (Settings.Instance.GetGameMode() == 1)
+        {
+            timePlayer1 = 180;
         }
         if(Settings.Instance.GetGameMode() == 2)
         {
-            time = 30;
+            timePlayer1 = 30;
         }
     }
     void Start()
@@ -57,22 +67,24 @@ public class TimerManager : MonoBehaviour
         soundtiempo.Play();
         _isPaused = false;
 
-        if (currentMode == GameMode.CountDown)
+        if (currentMode == GameMode.CountDown || currentMode == GameMode.TwoPlayer)
         {
             gameOverCanvas.SetActive(false);
         }
         else
         {
-            time = 0;
+            timePlayer1 = 0;
         }
     }
 
     void Update()
     {
         if (_isPaused) return;
-
-        // Verifica si es el modo de cuenta regresiva
-        if (currentMode == GameMode.CountDown)
+        if (currentMode == GameMode.TwoPlayer)
+        {
+            HandleTwoPlayerTimer();
+        }
+        else if (currentMode == GameMode.CountDown)
         {
             HandleCountDownTimer();
         }
@@ -81,27 +93,26 @@ public class TimerManager : MonoBehaviour
             HandleCountUpTimer();
         }
     }
-
     void HandleCountDownTimer()
     {
-        if (Comparisons.aciertos < 28 && !Comparisons.timepause && !Comparisons.setcanvas)
+        if (Comparisons.aciertosPlayer1 < 28 && !Comparisons.timepause && !Comparisons.setcanvas)
         {
-            time -= Time.deltaTime;
-            DisplayTime(time);
+            timePlayer1 -= Time.deltaTime;
+            DisplayTime(timePlayer1);
             puntos -= 2 * Time.deltaTime;
 
             if (puntos <= 0) puntos = 0;
         }
 
-        if (time <= 0)
+        if (timePlayer1 <= 0)
         {
-            time = 0;
+            timePlayer1 = 0;
             GameOver();
             GamePaused();
             soundtiempo.Stop();
         }
 
-        if (Comparisons.aciertos >= 28)
+        if (Comparisons.aciertosPlayer1 >= 28)
         {
             DisplayFinalStats();
         }
@@ -114,16 +125,16 @@ public class TimerManager : MonoBehaviour
 
     void HandleCountUpTimer()
     {
-        if (Comparisons.aciertos < 28 && !Comparisons.timepause && !Comparisons.setcanvas)
+        if (Comparisons.aciertosPlayer1 < 28 && !Comparisons.timepause && !Comparisons.setcanvas)
         {
-            time += Time.deltaTime;
-            DisplayTime(time);
+            timePlayer1 += Time.deltaTime;
+            DisplayTime(timePlayer1);
             puntos -= 3 * Time.deltaTime;
 
             if (puntos <= 0) puntos = 0;
         }
 
-        if (Comparisons.aciertos >= 28)
+        if (Comparisons.aciertosPlayer1 >= 28)
         {
             DisplayFinalStats();
         }
@@ -133,12 +144,64 @@ public class TimerManager : MonoBehaviour
             soundtiempo.Stop();
         }
     }
+    void HandleTwoPlayerTimer()
+    {
+        if (isPlayer1Turn)
+        {
+            timePlayer1 += Time.deltaTime;
+            DisplayTimeTwoPlayers(timePlayer1, timetext);
+        }
+        else
+        {
+            timePlayer2 += Time.deltaTime;
+            DisplayTimeTwoPlayers(timePlayer2, timetext);
+        }
+    }
+    public void ChangeTurn()
+    {
+        StartCoroutine(SwitchPlayerTurn());
+        HandleTwoPlayerTimer();
+        if(isPlayer1Turn)
+        {
+            SceneChanger.Instance.ActivePlayer(0);
+        }
+        else
+        {
+            SceneChanger.Instance.ActivePlayer(1);
+        }
+    }
 
+    void DisplayTimeTwoPlayers(float TimetoDisplay, TMP_Text textToUpdate)
+    {
+        if (TimetoDisplay < 0)
+        {
+            TimetoDisplay = 0;
+        }
+        else if (TimetoDisplay > 0)
+        {
+            TimetoDisplay += 1;
+        }
+
+        float minutes = Mathf.FloorToInt(TimetoDisplay / 60);
+        float seconds = Mathf.FloorToInt(TimetoDisplay % 60);
+
+        textToUpdate.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+    IEnumerator SwitchPlayerTurn()
+    {
+        isPlayer1Turn = !isPlayer1Turn; // Cambia de jugador
+        _isPaused = true;
+        soundtiempo.Stop();
+        yield return new WaitForSeconds(1); // Delay de 1 segundo
+
+        _isPaused = false;
+        soundtiempo.Play();
+    }
     void DisplayFinalStats()
     {
         soundtiempo.Stop();
-        FinalTimeText.text = time.ToString("0") + " segundos";
-        Errors.text = Comparisons.errores.ToString();
+        FinalTimeText.text = timePlayer1.ToString("0") + " segundos";
+        Errors.text = Comparisons.erroresPlayer1.ToString();
         textScore.text = puntos.ToString("0");
         canvasScoreBoard.SetActive(true);
 
@@ -148,7 +211,6 @@ public class TimerManager : MonoBehaviour
             i++;
         }
     }
-
     void GameOver()
     {
         Debug.Log("GameOver");
@@ -215,7 +277,7 @@ public class TimerManager : MonoBehaviour
 
     public void AddTime(float secondsToAdd)
     {
-        time += secondsToAdd;
-        DisplayTime(time);
+        timePlayer1 += secondsToAdd;
+        DisplayTime(timePlayer1);
     }
 }

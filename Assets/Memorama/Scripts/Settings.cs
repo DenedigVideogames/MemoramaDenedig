@@ -1,13 +1,10 @@
 using System;
 using System.Collections;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 
 public class Settings : MonoBehaviour
 {
@@ -42,10 +39,10 @@ public class Settings : MonoBehaviour
 
     [Header("Players name")]
     public TMP_InputField inputField;
+    public TMP_InputField inputfieldPlayer2; 
 
-    public string Player;
-
-
+    public string Player1;
+    public string Player2 = "test";
 
     void Awake()
     {
@@ -117,9 +114,13 @@ public class Settings : MonoBehaviour
         SetSFXVolume();
     }
 
-    public void SetName()
+    public void UpdateNamePlayer1(string player)
     {
-        Player = inputField.text;
+        Player1 = inputField.text;
+    }
+    public void UpdateNamePlayer2(string player)
+    {
+        Player2 = inputfieldPlayer2.text;
     }
 
     public void PlayMusic(string name)

@@ -3,38 +3,63 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Rendering;
 
 public class SceneChanger : MonoBehaviour
 {
     public TextMeshProUGUI playername;
     public GameObject falseresolver;
     public GameObject roundcanva;
-    private int i=0;
+    public string player1;
+    public string player2;
+    private int i = 0;
+    public static SceneChanger Instance;
 
     public void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         roundcanva.SetActive(false);
         falseresolver.SetActive(false);
-        playername.text = Settings.Instance.Player;
+        playername.text = Settings.Instance.Player1;
+        Debug.Log("playerName" + Settings.Instance.Player1);
+        player1 = Settings.Instance.Player1;
+        player2 = Settings.Instance.Player2; 
+    }
+    public void ActivePlayer(int playerActive)
+    {
+        if(playerActive == 0)
+        {
+            playername.text = player1;
+        }
+        else
+        {
+            playername.text = player2;
+        }
     }
 
-    void Update()
+    public void SetCanvas()
     {
-        if (Comparisons.setcanvas == true)
+        if(Comparisons.setcanvas == true)
         {
-            if(i == 0)
+            if(i==0)
             {
                 Settings.Instance.PlaySfx("Ronda");
-                i++;
             }
             roundcanva.SetActive(true);
         }
-
-        if (Comparisons.setcanvas == false)
+        if(Comparisons.setcanvas == false)
         {
             roundcanva.SetActive(false);
         }
     }
+
 
     public void SceneLoader(int SceneIndex)
     {

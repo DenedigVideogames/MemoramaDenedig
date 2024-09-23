@@ -9425,8 +9425,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 623456916}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
-        m_MethodName: SetName
-        m_Mode: 1
+        m_MethodName: UpdateNamePlayer1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9467,8 +9467,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 623456916}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
-        m_MethodName: SetName
-        m_Mode: 1
+        m_MethodName: UpdateNamePlayer1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12501,7 +12501,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a6ce7afaa619f034b8fd8e011b8390f9, type: 2}
   - {fileID: 11400000, guid: a4ec747c99b34ea44b108b8099e38fd3, type: 2}
   inputField: {fileID: 399734290}
-  Player: 
+  inputfieldPlayer2: {fileID: 0}
+  Player1: 
+  Player2: test
 --- !u!4 &623456917
 Transform:
   m_ObjectHideFlags: 0
