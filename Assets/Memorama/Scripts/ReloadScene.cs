@@ -12,6 +12,3 @@ public class ReloadScene : MonoBehaviour
         SceneManager.LoadScene(currentSceneIndex);
     }
 }
-
-
-
