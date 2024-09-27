@@ -12,4 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef594b83fa8ac048b1f0316245d9b18, type: 3}
   m_Name: Vestimenta
   m_EditorClassIdentifier: 
-  cartas: []
+  cartas:
+  - {fileID: 11400000, guid: 62941def878130a4ea0653b95fbbdc77, type: 2}
+  - {fileID: 11400000, guid: b7d9c6647bdbfac4aa96c4d7a8634300, type: 2}
+  - {fileID: 11400000, guid: 45c0e83cb7ff06b438c60956b1c0d8ea, type: 2}
+  - {fileID: 11400000, guid: e2b0bc5128f506048976f46ad2b09337, type: 2}
+  - {fileID: 11400000, guid: 602c92bd376a5ee4aa8a991299221eaa, type: 2}
+  - {fileID: 11400000, guid: c31773da28a667e40be23c0d8d4a480d, type: 2}
+  - {fileID: 11400000, guid: 062541e6d1cf1fc4e8fd8e8dea30704e, type: 2}
+  - {fileID: 11400000, guid: e804ddb2612a6c2439c5946a4a923d0c, type: 2}
+  - {fileID: 11400000, guid: f91229b1ceeb98a4697fef3b3cc45f14, type: 2}
+  - {fileID: 11400000, guid: 331337c1448125943904ec6a2123344a, type: 2}
+  - {fileID: 11400000, guid: f7ef316d2f9f7374386d0a17cea75f2e, type: 2}
+  - {fileID: 11400000, guid: 892ccbab4449a8242b3ab25f4c987a8b, type: 2}
+  - {fileID: 11400000, guid: d62211090321ae94ab246f137e49116d, type: 2}
+  - {fileID: 11400000, guid: 5cdc4fce41ba2e244b4e918beca467cb, type: 2}
+  - {fileID: 11400000, guid: 5ee5cee4571840242b0e2be393821071, type: 2}
