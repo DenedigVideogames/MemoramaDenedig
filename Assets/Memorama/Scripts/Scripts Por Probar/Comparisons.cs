@@ -285,6 +285,7 @@ public class Comparisons : MonoBehaviour
         {
             setcanvas = true;
             SceneChanger.Instance.SetCanvas();
+            timepause = true;
             Cuentalugar = 0;
         }
 

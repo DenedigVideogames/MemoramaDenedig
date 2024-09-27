@@ -42,7 +42,7 @@ public class Settings : MonoBehaviour
     public TMP_InputField inputfieldPlayer2; 
 
     public string Player1;
-    public string Player2 = "test";
+    public string Player2;
 
     void Awake()
     {

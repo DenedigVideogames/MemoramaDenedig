@@ -234,6 +234,8 @@ MonoBehaviour:
   playername: {fileID: 705836071}
   falseresolver: {fileID: 523444392}
   roundcanva: {fileID: 469210469}
+  player1: 
+  player2: 
 --- !u!114 &18047340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,6 +334,7 @@ MonoBehaviour:
   additionalTextScore: {fileID: 1918972386}
   timePlayer1: 0
   timePlayer2: 0
+  isPlayer1Turn: 1
   canvasScoreBoard: {fileID: 781269920}
   gameOverCanvas: {fileID: 1758306937}
   puntos: 900
@@ -1278,6 +1281,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a6ce7afaa619f034b8fd8e011b8390f9, type: 2}
   - {fileID: 11400000, guid: a4ec747c99b34ea44b108b8099e38fd3, type: 2}
   inputField: {fileID: 0}
+  inputfieldPlayer2: {fileID: 0}
   Player1: 
   Player2: 
 --- !u!4 &119744389
@@ -9598,10 +9602,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TimeCount, Assembly-CSharp
-        m_MethodName: playsonidotiempo
-        m_Mode: 1
+      - m_Target: {fileID: 469210469}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
