@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -144,19 +143,27 @@ public class TimerManager : MonoBehaviour
             soundtiempo.Stop();
         }
     }
+
     void HandleTwoPlayerTimer()
     {
-        if (isPlayer1Turn)
+        if (isPlayer1Turn && Comparisons.aciertosPlayer1 + Comparisons.aciertosPlayer2 < 28 && !Comparisons.timepause &&
+            !Comparisons.setcanvas)
         {
             timePlayer1 += Time.deltaTime;
             DisplayTimeTwoPlayers(timePlayer1, timetext);
         }
-        else
+        else if (!isPlayer1Turn && Comparisons.aciertosPlayer1 + Comparisons.aciertosPlayer2 < 28 &&
+                 !Comparisons.timepause && !Comparisons.setcanvas)
         {
             timePlayer2 += Time.deltaTime;
             DisplayTimeTwoPlayers(timePlayer2, timetext);
         }
+        if (Comparisons.timepause || Comparisons.setcanvas || Comparisons.setcanvascore)
+        {
+            soundtiempo.Stop();
+        }
     }
+
     public void ChangeTurn()
     {
         StartCoroutine(SwitchPlayerTurn());
@@ -196,6 +203,7 @@ public class TimerManager : MonoBehaviour
 
         _isPaused = false;
         soundtiempo.Play();
+        Debug.Log("pausa");
     }
     void DisplayFinalStats()
     {

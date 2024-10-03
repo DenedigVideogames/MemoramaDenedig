@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d45fc053027f42847c9109d6ed61a, type: 3}
   m_Name: Huichol
   m_EditorClassIdentifier: 
-  imagen: {fileID: 21300000, guid: 1743f9362e769e64cb2b438857a79460, type: 3}
+  imagen: {fileID: 21300000, guid: 11e30141fd6d52a408e8ec809d98bb99, type: 3}
   nombre: Huichol

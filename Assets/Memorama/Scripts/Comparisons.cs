@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -88,6 +89,8 @@ public class Comparisons : MonoBehaviour
         }
     }
 
+
+
     public void CheckPar()
     {
         if (CartasVolteadas == 2)
@@ -116,6 +119,7 @@ public class Comparisons : MonoBehaviour
 
         rachaCount++;
         UpdateScore();
+        Debug.Log("Racha Count: " + rachaCount);
 
         if (timerPlus)
         {
@@ -135,12 +139,13 @@ public class Comparisons : MonoBehaviour
         if (currentPlayer == 1)
         {
             erroresPlayer1++;
+            WrongText.text = erroresPlayer1.ToString();
         }
         else
         {
             erroresPlayer2++;
+            WrongText.text = erroresPlayer2.ToString();
         }
-
         rachaCount = 0;
 
         if (spawner.modoSinFallos && erroresPlayer1 == 1)
@@ -156,11 +161,16 @@ public class Comparisons : MonoBehaviour
         StartCoroutine(Corspaw());
 
         CartasVolteadas = 0;
+
+        Debug.Log("Errores Player 1: " + erroresPlayer1 + ", Errores Player 2: " + erroresPlayer2);
+
     }
 
     private void CheckTextAciertos()
     {
         CheckText.text = aciertosPlayer1 + " / " + (spawner.modoSinFallos ? "28" : "28");
+        Debug.Log("se checa los aciertos");
+        
     }
 
     private void UpdateScore()
@@ -171,6 +181,7 @@ public class Comparisons : MonoBehaviour
             rachaCanvas.gameObject.SetActive(true);
             Invoke("DesactivarRachaCanvas", 3.7f);
         }
+        Debug.Log(" se actualizo el puntaje");
     }
 
     private void ChangeTurn()
@@ -193,6 +204,8 @@ public class Comparisons : MonoBehaviour
         {
             collider.enabled = false;
         }
+        
+        Debug.Log("se desactivaron los colliders");
     }
 
     public void ActivateAllColliders()
@@ -201,6 +214,7 @@ public class Comparisons : MonoBehaviour
         {
             collider.enabled = true;
         }
+        Debug.Log("se activaron los colliders");
     }
 
     private void DesactivarRachaCanvas()
@@ -228,12 +242,16 @@ public class Comparisons : MonoBehaviour
     {
         cartavol1.GetComponent<BoxCollider>().enabled = true;
         cartavol2.GetComponent<BoxCollider>().enabled = true;
+        Debug.Log("Colliders habilitados para cartavol1 y cartavol2");
+
     }
 
     private void WaitTime()
     {
         cartavol1.GetComponent<Animator>().SetTrigger("Close");
         cartavol2.GetComponent<Animator>().SetTrigger("Close");
+        Debug.Log("Activando animación 'Close' para las cartas");
+
     }
 
     private IEnumerator Makebig()
@@ -287,6 +305,7 @@ public class Comparisons : MonoBehaviour
             SceneChanger.Instance.SetCanvas();
             timepause = true;
             Cuentalugar = 0;
+            Debug.Log("Time pause : " + timepause );
         }
 
         if (aciertosPlayer1 + aciertosPlayer2 == 28)
@@ -304,6 +323,8 @@ public class Comparisons : MonoBehaviour
         timeManager.soundtiempo.Play();
         Cursor.lockState = CursorLockMode.None;
         StopAllCoroutines();
+        Debug.Log(" ResetAfterSpawn");
+        Debug.Log("Time pause : " + timepause );
     }
 
     void CorrectParPos()

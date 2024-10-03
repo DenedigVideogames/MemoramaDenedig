@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d45fc053027f42847c9109d6ed61a, type: 3}
   m_Name: Mariachi
   m_EditorClassIdentifier: 
-  imagen: {fileID: 21300000, guid: 8376a8830194c9a40a52354fc13998df, type: 3}
+  imagen: {fileID: 21300000, guid: e2bd070603debb6488a9576901e2d081, type: 3}
   nombre: Mariachi

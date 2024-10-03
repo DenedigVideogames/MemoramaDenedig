@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d45fc053027f42847c9109d6ed61a, type: 3}
   m_Name: Huastecos
   m_EditorClassIdentifier: 
-  imagen: {fileID: 21300000, guid: 0af65df13df0e9a499bf141ddba6fefd, type: 3}
+  imagen: {fileID: 21300000, guid: 8134e758174104a419761245d58d3a15, type: 3}
   nombre: Huastecos

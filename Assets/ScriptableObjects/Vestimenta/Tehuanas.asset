@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d45fc053027f42847c9109d6ed61a, type: 3}
   m_Name: Tehuanas
   m_EditorClassIdentifier: 
-  imagen: {fileID: 21300000, guid: cf56b4ed70db1f845874311562d24630, type: 3}
+  imagen: {fileID: 21300000, guid: 458ebdb7f5a663c4c98d8420dbd0b2cc, type: 3}
   nombre: Tehuanas

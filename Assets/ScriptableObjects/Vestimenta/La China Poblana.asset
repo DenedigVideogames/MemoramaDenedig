@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d45fc053027f42847c9109d6ed61a, type: 3}
   m_Name: La China Poblana
   m_EditorClassIdentifier: 
-  imagen: {fileID: 21300000, guid: 23b087642f293f6488f386a7bebd7534, type: 3}
+  imagen: {fileID: 21300000, guid: 1dd7cf9c4629c1b47a459da8e5fff457, type: 3}
   nombre: La China Poblana

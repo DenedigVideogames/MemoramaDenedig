@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d45fc053027f42847c9109d6ed61a, type: 3}
   m_Name: Adelaita
   m_EditorClassIdentifier: 
-  imagen: {fileID: 21300000, guid: 7c41b9131e4f9254899d7b8b20cda7b8, type: 3}
+  imagen: {fileID: 21300000, guid: 9042692c626762f438d749203af7ef55, type: 3}
   nombre: Adelaita
