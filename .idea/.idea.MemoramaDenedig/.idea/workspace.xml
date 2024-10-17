@@ -3,57 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="96899ccb-ca6d-4142-8334-6704eb22c1af" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MemoramaDenedig/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MemoramaDenedig/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scenes/SceneMultiGameMode.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Memorama/Scenes/SceneMultiGameMode.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/Comparisons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Memorama/Scripts/Comparisons.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/LeaderBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Memorama/Scripts/LeaderBoard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Memorama/Scripts/Spawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/TimerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Memorama/Scripts/TimerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/AdelitaF.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/AdelitaF.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/Chiapaneca C.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/Chiapaneca C.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/Guayabera No.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/Guayabera No.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/Huastecos Femenino.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/Huastecos Femenino.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/Huastecos.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/Huastecos.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/JarochoF.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/JarochoF.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/La China Poblana C.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/La China Poblana C.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/MariachiF.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/MariachiF.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/Mayas HombresCorrecion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/Mayas HombresCorrecion.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/Mayas Mujeres Nombre.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/Mayas Mujeres Nombre.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/Mixtecos.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/Mixtecos.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/TehuanasF.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/TehuanasF.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/TernoN.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/TernoN.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/flor de pitahaya.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/flor de pitahaya.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/huicholF.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Sprites/ImgCards/Vestimenta/huicholF.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Adelaita.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Adelaita.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Chiapaneca.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Chiapaneca.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Flor de pitaha.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Flor de pitaha.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Guayabera.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Guayabera.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Huastecos Femenino.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Huastecos Femenino.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Huastecos.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Huastecos.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Huichol.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Huichol.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Jarocho.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Jarocho.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/La China Poblana.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/La China Poblana.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Mariachi.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Mariachi.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Mayas Mujeres.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Mayas Mujeres.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Mayas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Mayas.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Mixtecos.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Mixtecos.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Tehuanas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Tehuanas.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Terno.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Vestimenta/Terno.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scriptableObjects/CardContainer/Arquitectura.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scriptableObjects/CardContainer/Arquitectura.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshot.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

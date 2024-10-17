@@ -12,4 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef594b83fa8ac048b1f0316245d9b18, type: 3}
   m_Name: Arquitectura
   m_EditorClassIdentifier: 
-  cartas: []
+  cartas:
+  - {fileID: 11400000, guid: 3c0f517663eed154d84405a2095fe077, type: 2}
+  - {fileID: 11400000, guid: 1c57bf051d5685b4a932ca378ebf46df, type: 2}
+  - {fileID: 11400000, guid: 5aff4e7426961a4488c5c952a897467d, type: 2}
+  - {fileID: 11400000, guid: 9ec94273564b70543828274ea6ce30be, type: 2}
+  - {fileID: 11400000, guid: 009a517b38d81d54794baf64bd273240, type: 2}
+  - {fileID: 11400000, guid: 63fc1bde31ae86e46adbb573f4edeed4, type: 2}
+  - {fileID: 11400000, guid: 309fc7442f6c3ce479a7c45f8b0a8053, type: 2}
+  - {fileID: 11400000, guid: 2827d9ad8b10b854cbaf9d4bf30e9e4c, type: 2}
+  - {fileID: 11400000, guid: 64633342dc320354b9422b09c3ae555a, type: 2}
+  - {fileID: 11400000, guid: 4d69fd4ae00d50b428fefbc81c4268e9, type: 2}
