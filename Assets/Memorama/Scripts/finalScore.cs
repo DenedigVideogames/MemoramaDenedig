@@ -40,10 +40,7 @@ public class finalScore : MonoBehaviour
 
 
     }
-    void errores()
-    {
-        
-    }
+  
 }
 
 

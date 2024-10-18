@@ -3,13 +3,32 @@
   <component name="ChangeListManager">
     <list default="true" id="96899ccb-ca6d-4142-8334-6704eb22c1af" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MemoramaDenedig/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MemoramaDenedig/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scriptableObjects/CardContainer/Arquitectura.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scriptableObjects/CardContainer/Arquitectura.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/Comparisons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Memorama/Scripts/Comparisons.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/Memorama.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/Memorama.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/MusicMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Memorama/Scripts/MusicMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/NoDestruirObj.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Memorama/Scripts/NoDestruirObj.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/ReloadScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Memorama/Scripts/ReloadScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/RemoveDropTitle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Memorama/Scripts/RemoveDropTitle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/SceneChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Memorama/Scripts/SceneChanger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/Screenshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Memorama/Scripts/Screenshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/SetSelectionMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Memorama/Scripts/SetSelectionMode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/ShuffleListExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Memorama/Scripts/ShuffleListExtension.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/Spawn_Max.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Memorama/Scripts/Spawn_Max.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/Text.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Memorama/Scripts/Text.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/TextSizeAndFontChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Memorama/Scripts/TextSizeAndFontChanger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memorama/Scripts/finalScore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Memorama/Scripts/finalScore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memorama/scriptableObjects.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memorama/scriptableObjects.zip.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/screenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshot.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -90,6 +109,7 @@
       <workItem from="1727710894402" duration="2093000" />
       <workItem from="1727882316235" duration="10775000" />
       <workItem from="1727970020158" duration="4650000" />
+      <workItem from="1729265663213" duration="1234000" />
     </task>
     <servers />
   </component>

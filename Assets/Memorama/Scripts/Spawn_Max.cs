@@ -1,10 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
-using TMPro;
 
 
 public class Spawn_Max : MonoBehaviour
@@ -23,21 +19,17 @@ public class Spawn_Max : MonoBehaviour
 
     private List<int> CardIDs;
 
-    public Button waveButton; // Asigna el botón de Unity desde el Inspector.
+    public Button waveButton; // Asigna el botï¿½n de Unity desde el Inspector.
 
     void Start()
     {
         CardIDs = MixCards(waveCardCounts[currentWave]);
         SpawnCards(waveCardCounts[currentWave]);
 
-        // Asigna la función OnWaveButtonClicked al botón de Unity.
+        // Asigna la funciï¿½n OnWaveButtonClicked al botï¿½n de Unity.
         waveButton.onClick.AddListener(OnWaveButtonClicked);
     }
-
-    void Update()
-    {
-        // No necesitas la detección de tecla en este caso.
-    }
+    
 
     public void OnWaveButtonClicked()
     {
